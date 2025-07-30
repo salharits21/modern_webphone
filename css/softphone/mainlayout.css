@@ -857,3 +857,224 @@ width: 1.875em;
     text-decoration:none; text-shadow:0 0 0; color: #eee; }
 
 /* VIDEO ELEMENTS STYLE is defined in css/video.css */
+/* === MODERNISASI DIALPAD === */
+
+/* Mengatur font dasar dan warna latar utama */
+body, #phone_app_main_container {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Font yang lebih modern */
+    background-color: #F4F6F8 !important; /* Warna latar belakang abu-abu muda */
+}
+#page_dialpad_content {
+    background-color: #ffffff !important;
+}
+
+#app_name_dialpad {
+    color: #ffffff !important;
+}
+
+/* Modernisasi Header */
+#dialpad_header, #dialpad_header .ui-bar-b {
+    background: linear-gradient(to right, #2E9AFE, #00BFFF); /* Gradient biru modern */
+    border: none !important; /* Hilangkan border bawah */
+    color: #ffffff !important; /* Warna teks putih */
+    text-shadow: none !important; /* Hilangkan text shadow lama */
+}
+
+/* Status bar (Connected, Encrypted) */
+.status_container .status, .status_container .curr_user {
+    color: #ffffff; /* Teks putih */
+    font-size: 0.9em;
+}
+
+/* Judul "Phone" di tengah header */
+#dialpad_title {
+    color: #ffffff !important; /* Teks putih */
+    font-weight: 600; /* Sedikit lebih tebal */
+    font-size: 1.1em;
+}
+
+.navigation_bar,
+.navigation_bar .ui-navbar,
+.navigation_bar ul {
+    background: #007BFF !important; /* Warna biru untuk seluruh bar */
+    border: none !important;
+    padding: 5px; /* Beri sedikit ruang di dalam bar */
+}
+
+/* 3. Atur agar semua tab memiliki lebar yang sama */
+.navigation_bar ul {
+    display: flex;
+    justify-content: space-around; /* Sebar tab secara merata */
+    width: 100%;
+}
+.navigation_bar ul li {
+    flex: 1; /* Setiap tab (li) akan mengambil porsi ruang yang sama */
+    margin: 0 4px; /* Beri sedikit jarak antar tab */
+}
+
+/* 4. Styling untuk SEMUA tombol tab (aktif dan non-aktif) */
+.navigation_bar .ui-btn {
+    background: transparent !important; /* Buat background tombol transparan */
+    border: none !important;
+    color: #A9D5FF !important; /* Warna teks & ikon untuk tab non-aktif (biru muda) */
+    text-shadow: none !important;
+    margin: 0 !important;
+    padding: .7em 1em !important;
+    transition: background-color 0.2s ease; /* Animasi halus */
+}
+
+/* 5. Styling KHUSUS untuk tab yang AKTIF */
+.navigation_bar .ui-btn.ui-btn-active {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Background putih untuk tab aktif */
+    color: #007BFF !important; /* Teks dan ikon biru */
+    border-radius: 8px !important; /* Sudut melengkung */
+}
+
+/* 6. (Opsional) Styling saat tab disentuh (hover) */
+.navigation_bar .ui-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+}
+
+/* Container untuk input nomor telepon */
+#phone_number_container {
+    background: #ffffff !important; /* Latar belakang putih */
+    margin: 15px;
+    border-radius: 12px; /* Sudut melengkung */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    border: 1px solid #EAECEE;
+    padding: 5px;
+}
+
+/* Styling input field */
+#phone_number_container #phone_number {
+    color: #1D2A32; /* Warna teks input gelap */
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center !important; /* Teks di tengah */
+    margin-left: 0 !important;
+}
+
+/* Styling placeholder text */
+#phone_number_container ::placeholder {
+    color: #AAB0B6; /* Warna placeholder abu-abu */
+    font-weight: 400;
+}
+
+/* Tombol backspace */
+#btn_backspace {
+    background: none !important;
+}
+#btn_backspace img {
+    /* Ganti dengan ikon modern */
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23007BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>');
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+/* Menghilangkan background bertekstur pada grid dialpad */
+#dialpad_btn_grid {
+    display: grid; /* Gunakan CSS Grid modern */
+    grid-template-columns: repeat(3, 1fr); /* Buat 3 kolom yang sama lebarnya */
+    gap: 12px; /* Beri jarak 12px antar tombol */
+    padding: 15px; /* Beri ruang di sekitar grid */
+    background: none !important;/* Beri sedikit jarak di sisi */
+}
+#dialpad_btn_grid .ui-block-a,
+#dialpad_btn_grid .ui-block-b,
+#dialpad_btn_grid .ui-block-c {
+    width: auto !important;
+}
+/* Styling untuk setiap tombol angka */
+#dialpad_btn_grid .ui-btn {
+    background: #ffffff !important; /* Latar belakang putih */
+    border: 1px solid #EAECEE !important; /* Border abu-abu muda */
+    border-radius: 12px !important; /* Sudut melengkung */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Bayangan sangat lembut */
+    margin: 0 !important;
+    padding: 10px 0 !important;
+}
+
+/* Efek saat tombol disentuh/hover */
+#dialpad_btn_grid .ui-btn:hover {
+    background-color: #F8F9FA !important; /* Sedikit lebih gelap saat disentuh */
+    border-color: #DDE1E4 !important;
+}
+
+/* Angka besar di tombol (1, 2, 3...) */
+#dialpad_btn_grid .ui-btn .number {
+    color: #1D2A32 !important; /* Warna gelap */
+    font-size: 2.2em !important;
+    font-weight: 400 !important;
+}
+
+/* Teks kecil di bawah angka (ABC, DEF...) */
+#dialpad_btn_grid .ui-btn .smalltext {
+    color: #848C94 !important; /* Warna abu-abu */
+    font-weight: 500 !important;
+    font-size: 0.6em !important;
+}
+
+/* === MODERNISASI FOOTER DIALPAD === */
+
+/* 1. Mengubah background footer menjadi putih */
+#dialpad_footer, #dialpad_call_grid {
+    background-color: #ffffff !important;
+    border-top: 1px solid #EAECEE; /* Garis tipis pemisah */
+    padding: 10px 0; /* Beri sedikit ruang vertikal */
+    min-height: 80px; /* Atur tinggi minimum */
+    display: flex;
+    align-items: center; /* Posisikan semua item di tengah secara vertikal */
+    background-image: none !important;
+}
+
+/* 2. Tombol tengah (Telepon) dibuat menjadi lingkaran hijau */
+#btn_call .ui-btn {
+    background-color: #28a745 !important;  /* Warna hijau */
+    border-radius: 50% !important;         /* Membuat bentuk lingkaran */
+    width: 65px !important;                /* Lebar lingkaran */
+    height: 65px !important;               /* Tinggi lingkaran */
+    margin: 0 auto !important;             /* Posisikan di tengah bloknya */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); /* Bayangan hijau lembut */
+    transition: transform 0.2s ease; /* Animasi saat disentuh */
+}
+
+/* Efek saat tombol telepon disentuh */
+#btn_call .ui-btn:hover {
+    transform: scale(1.05); /* Sedikit membesar */
+}
+
+/* 3. Ikon di dalam tombol telepon diubah menjadi putih */
+#btn_call .ui-btn img {
+    width: 32px; /* Sesuaikan ukuran ikon */
+    height: 32px;
+    /* Trik CSS untuk mengubah ikon hitam menjadi putih */
+    filter: brightness(0) invert(1);
+}
+
+/* 4. Styling untuk tombol di sisi kiri dan kanan */
+#btn_showhide_numpad .ui-btn,
+#btn_message .ui-btn {
+    background: #007BFF !important;  /* Warna hijau */
+    border-radius: 50% !important;         /* Membuat bentuk lingkaran */
+    width: 65px !important;                /* Lebar lingkaran */
+    height: 65px !important;               /* Tinggi lingkaran */
+    margin: 0 auto !important;             /* Posisikan di tengah bloknya */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px  rgba(255, 255, 255, 0.1); /* Bayangan hijau lembut */
+    transition: transform 0.2s ease;
+}
+
+/* 5. Mengatur ukuran ikon untuk tombol kiri dan kanan */
+#btn_showhide_numpad img,
+#btn_message img {
+    width: 28px;
+    height: 28px;
+    opacity: 2.0; /* Buat ikon sedikit transparan agar tidak terlalu mencolok */
+}

@@ -31,6 +31,7 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 
     <script>window.pageissdk = false;</script>
     <script src="webphone_api.js?jscodeversion=821"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
 </head>
@@ -590,75 +591,89 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 <!-- END Call Page -->
 
 <!-- AddEditContact Page -->
-<div id="page_addeditcontact" class="all_app_pages" data-role="page">
-    <div id="addeditcontact_header" data-role="header" data-theme="b">
-        <div id="addeditcontact_additional_header">
+<div id="page_addeditcontact" class="all_app_pages" data-role="page" style="background-color: #f0f2f5; font-family: 'Segoe UI', Arial, sans-serif;">
+    <div id="addeditcontact_header" data-role="header" data-theme="b" style="background-color: #007bff; border-bottom: 1px solid #0056b3; padding: 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div id="addeditcontact_additional_header" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="additional_header_left">
-                <a id="addeditct_btnback" class="btn_header_back ui-btn" data-rel="back"><b>&LT;</b>&nbsp;Back</a>
+                <a id="addeditct_btnback" class="btn_header_back ui-btn" data-rel="back" 
+                   style="background-color: transparent; color: #fff; text-decoration: none; font-weight: bold; 
+                          font-size: 14px; padding: 8px 12px; border: 1px solid #fff; border-radius: 5px; 
+                          transition: background-color 0.3s ease, color 0.3s ease; display: inline-block;">
+                    <span style="font-weight: bold;">&lt;</span> Back
+                </a>
             </div>
 
-            <div id="addeditct_title" class="additional_header_middle">_Contact</div>
+            <div id="addeditct_title" class="additional_header_middle" style="color: #fff; font-size: 20px; font-weight: bold;">Edit Contact</div> 
             
             <div class="additional_header_right">
-                <a href="#addeditcontact_menu" id="btn_addeditcontact_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown">Menu</a>
-
-                <div id="addeditcontact_menu" class="options_menu" data-role="popup">
-                    <ul id="addeditcontact_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
-                    </ul>
+                <a href="#addeditcontact_menu" id="btn_addeditcontact_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown" style="background-color: transparent; border: none; box-shadow: none; font-size: 24px; color: #fff; line-height: 1; padding: 0 8px;">&#9776;</a> <div id="addeditcontact_menu" class="options_menu" data-role="popup" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <ul id="addeditcontact_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a" style="list-style: none; padding: 10px 0; margin: 0;">
+                        </ul>
                 </div>
             </div>
-            <div class="separator_line_thick"><!--//--></div>
         </div>
     </div>
-    <div id="page_addeditcontact_content" role="main" class="ui-content"  data-theme="b" data-content-theme="b">
-        <div id="aec_name_section">
-            <div class="aec_label" id="aec_label_name">Name</div>
-            <input type="text" id="aec_name" name="aec_firstname" data-theme="a" placeholder="Name" />
-            <div class="separator_line_thick"><!--//--></div>
-            <div id="aec_add_section">
-                <div class="aec_label" id="aec_label_phone">Phone</div>
-                <div id="aec_add"><button id="btn_add_aec" class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-plus ui-btn-icon-notext">Add</button></div>
+    <div id="page_addeditcontact_content" role="main" class="ui-content" data-theme="b" data-content-theme="b" style="padding: 15px; background-color: #f0f2f5;">
+        <div id="aec_name_section" style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); margin-bottom: 20px;">
+            <div class="aec_label" id="aec_label_name" style="font-size: 14px; color: #555; margin-bottom: 8px; font-weight: bold;">Name</div>
+            <input type="text" id="aec_name" name="aec_firstname" data-theme="a" placeholder="Enter contact name" style="width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; margin-bottom: 10px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
+        </div>
+
+        <div id="aec_add_phone_section" style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); margin-bottom: 20px;">
+            <div class="aec_label" id="aec_label_phone" style="font-size: 14px; color: #555; margin-bottom: 8px; font-weight: bold;">Phone Numbers</div>
+            <div id="aec_number_fields" style="margin-bottom: 10px;">
+                <div id="aec_entry_0" class="aec_numbers" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                    <div style="display: flex; align-items: center; width: 100%;">
+                        <button id="btn_type_aec_0" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow" style="background-color: #e0e0e0; color: #333; border: 1px solid #ccc; padding: 8px 12px; border-radius: 5px; margin-right: 10px; font-size: 14px;">Mobile</button>
+                        <input id="number_aec_0" type="text" name="number" data-theme="a" autocapitalize="off" placeholder="Phone number or SIP URI" style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
+                    </div>
+                    <div id="btn_minus_aec_0" class="minus_btn" style="display: none; width: 100%; text-align: right;"> 
+                        <button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext" style="background-color: #dc3545; color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1;">&#x2715;</button> </div>
+                </div>
+
+                </div>
+            <div id="aec_add" style="display: flex; justify-content: center; margin-top: 15px;">
+                <button id="btn_add_aec" class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-plus ui-btn-icon-notext" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 25px; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
+                    <span style="font-size: 20px; line-height: 1;">&#x2795;</span> Add Phone
+                </button>
             </div>
         </div>
-        <div id="aec_number_fields">
-            <div id="aec_entry_0" style="display: none;" class="aec_numbers"><button id="btn_type_aec_0" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_0" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_0" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_1" style="display: none;" class="aec_numbers"><button id="btn_type_aec_1" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_1" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_1" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_2" style="display: none;" class="aec_numbers"><button id="btn_type_aec_2" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_2" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_2" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_3" style="display: none;" class="aec_numbers"><button id="btn_type_aec_3" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_3" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_3" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_4" style="display: none;" class="aec_numbers"><button id="btn_type_aec_4" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_4" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_4" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_5" style="display: none;" class="aec_numbers"><button id="btn_type_aec_5" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_5" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_5" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_6" style="display: none;" class="aec_numbers"><button id="btn_type_aec_6" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_6" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_6" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_7" style="display: none;" class="aec_numbers"><button id="btn_type_aec_7" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_7" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_7" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_8" style="display: none;" class="aec_numbers"><button id="btn_type_aec_8" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_8" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_8" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_9" style="display: none;" class="aec_numbers"><button id="btn_type_aec_9" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_9" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_9" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_10" style="display: none;" class="aec_numbers"><button id="btn_type_aec_10" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_10" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_10" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_11" style="display: none;" class="aec_numbers"><button id="btn_type_aec_11" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_11" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_11" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_12" style="display: none;" class="aec_numbers"><button id="btn_type_aec_12" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_12" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_12" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_13" style="display: none;" class="aec_numbers"><button id="btn_type_aec_13" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_13" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_13" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_14" style="display: none;" class="aec_numbers"><button id="btn_type_aec_14" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_14" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_14" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_15" style="display: none;" class="aec_numbers"><button id="btn_type_aec_15" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_15" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_15" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_16" style="display: none;" class="aec_numbers"><button id="btn_type_aec_16" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_16" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_16" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_17" style="display: none;" class="aec_numbers"><button id="btn_type_aec_17" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_17" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_17" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_18" style="display: none;" class="aec_numbers"><button id="btn_type_aec_18" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_18" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_18" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            <div id="aec_entry_19" style="display: none;" class="aec_numbers"><button id="btn_type_aec_19" class="aec_phonetype ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b noshadow">Mobile_</button><input id="number_aec_19" type="text" name="number" data-theme="a" autocapitalize="off"/><div id="btn_minus_aec_19" class="minus_btn"><button class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-minus ui-btn-icon-notext">Remove</button></div></div>
-            
-            <div class="separator_line_thick" id="aec_details_separator"><!--//--></div>
-            <div id="aec_add_deatils">
-                <div id="aec_label_details">Add field_</div>
-                <div id="aec_add_detailsbtn"><button id="btn_add_aec_details" class="noshadow ui-btn-inline ui-btn ui-btn-corner-all ui-btn-b ui-icon-plus ui-btn-icon-notext">Add</button></div>
+        
+        <div id="aec_add_details_section" style="background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
+            <div class="aec_label" id="aec_label_details" style="font-size: 14px; color: #555; margin-bottom: 8px; font-weight: bold;">Additional Details</div>
+            <div id="aec_entry_email" class="aec_details" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <label style="font-size: 15px; color: #333; min-width: 60px;">Email:</label>
+                <input id="number_aec_email" type="text" name="email" data-theme="a" autocapitalize="off" placeholder="Enter email address" style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
             </div>
-            <!--email, address, notes, website-->
-            <div id="aec_entry_email" class="aec_details" style="display: none;"><label>Email_:</label><input id="number_aec_email" type="text" name="number" data-theme="a" autocapitalize="off"/></div>
-            <div id="aec_entry_address" class="aec_details" style="display: none;"><label>Address_:</label><input id="number_aec_address" type="text" name="number" data-theme="a"/></div>
-            <div id="aec_entry_notes" class="aec_details" style="display: none;"><label>Notes_:</label><input id="number_aec_notes" type="text" name="number" data-theme="a" autocapitalize="off"/></div>
-            <div id="aec_entry_website" class="aec_details" style="display: none;"><label>Website_:</label><input id="number_aec_website" type="text" name="number" data-theme="a" autocapitalize="off"/></div>
+            <div id="aec_entry_address" class="aec_details" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <label style="font-size: 15px; color: #333; min-width: 60px;">Address:</label>
+                <input id="number_aec_address" type="text" name="address" data-theme="a" placeholder="Enter address" style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
+            </div>
+            <div id="aec_entry_notes" class="aec_details" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <label style="font-size: 15px; color: #333; min-width: 60px;">Notes:</label>
+                <input id="number_aec_notes" type="text" name="notes" data-theme="a" autocapitalize="off" placeholder="Add notes" style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
+            </div>
+            <div id="aec_entry_website" class="aec_details" style="display: flex; align-items: center; margin-bottom: 10px;">
+                <label style="font-size: 15px; color: #333; min-width: 60px;">Website:</label>
+                <input id="number_aec_website" type="text" name="website" data-theme="a" autocapitalize="off" placeholder="Enter website URL" style="flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; outline: none; box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);"/>
+            </div>
         </div>
     </div>
-    <!--<div id="aec_footer" data-role="footer" data-theme="b" data-position="fixed">-->
-    <div id="aec_footer" data-role="footer" data-theme="b">
-        <div class="separator_line_thick"><!--//--></div>
-        <button id="btn_save_aec" class="ui-btn ui-btn-corner-all ui-btn-b noshadow">Save</button>
-        <button id="btn_revert_aec" class="ui-btn ui-btn-corner-all ui-btn-b noshadow">Cancel</button>
+    
+    <div id="aec_footer" data-role="footer" 
+         style="background-color: #f0f2f5 !important; border-top: none !important; 
+                padding: 10px 15px; box-shadow: none !important; 
+                display: flex; justify-content: space-around; align-items: center; gap: 10px;">
+        <button id="btn_save_aec" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" 
+                style="background-color: #007bff !important; color: #fff !important; 
+                       border: 1px solid #0056b3 !important; padding: 12px 25px; 
+                       border-radius: 25px; font-size: 16px; font-weight: bold; 
+                       flex-grow: 1; transition: background-color 0.3s ease, color 0.3s ease;">Save</button>
+        <button id="btn_revert_aec" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" 
+                style="background-color: #6c757d !important; color: #fff !important; 
+                       border: 1px solid #545b62 !important; padding: 12px 25px; 
+                       border-radius: 25px; font-size: 16px; font-weight: bold; 
+                       flex-grow: 1; transition: background-color 0.3s ease, color 0.3s ease;">Cancel</button>
     </div>
 </div>
 <!-- END AddEditContact Page -->
@@ -707,76 +722,99 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 <!-- END MessageList Page -->
 
 <!-- Message Page -->
-<div id="page_message" class="all_app_pages" data-role="page">
-    <div id="message_header" data-role="header" data-theme="b">
-        <div id="message_additional_header">
+<div id="page_message" class="all_app_pages" data-role="page" style="background-color: #f0f2f5; font-family: 'Segoe UI', Arial, sans-serif;">
+    <div id="message_header" data-role="header" data-theme="b" style="background-color: #007bff; border-bottom: 1px solid #0056b3; padding: 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div id="message_additional_header" style="display: flex; justify-content: space-between; align-items: center;">
             <div class="additional_header_left">
-                <a id="msg_btnback" class="btn_header_back ui-btn" data-rel="back"><b>&LT;</b>&nbsp;Back</a>
+                <a id="msg_btnback" class="btn_header_back ui-btn" data-rel="back" style="background-color: #fff; color: #fff; text-decoration: none; font-weight: bold; font-size: 14px; padding: 8px 12px; border-radius: 5px; transition: background-color 0.3s ease; border: 1px solid #e0e0e0; display: inline-block;">
+                    <span style="color: #007bff;">&lt;</span> <span style="color: #007bff;">Back</span>
+                </a>
             </div>
-            <div id="msg_title" class="additional_header_middle">Message</div>
+            <div id="msg_title" class="additional_header_middle" style="color: #fff; font-size: 20px; font-weight: bold;">Message</div>
             <div class="additional_header_right">
-                <a href="#message_menu" id="btn_message_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown">Menu</a>
-
-                <div id="message_menu" class="options_menu" data-role="popup">
-                    <ul id="message_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
-                    </ul>
+                <a href="#message_menu" id="btn_message_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown" style="background-color: transparent; border: none; box-shadow: none; font-size: 24px; color: #fff; line-height: 1; padding: 0 8px;">&#9776;</a> <div id="message_menu" class="options_menu" data-role="popup" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <ul id="message_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a" style="list-style: none; padding: 10px 0; margin: 0;">
+                        </ul>
                 </div>
             </div>
-            <div class="separator_line_thick"><!--//--></div>
         </div>
-        <div class="status_container">
-            <div class="status" id="status_message">&nbsp;</div>
-            <div class="curr_user" id="curr_user_message">&nbsp;</div>
+        <div class="status_container" style="display: flex; justify-content: space-between; align-items: center; padding-top: 5px;">
+            <div class="status" id="status_message" style="color: rgba(255,255,255,0.8); font-size: 12px;">&nbsp;</div>
+            <div class="curr_user" id="curr_user_message" style="color: rgba(255,255,255,0.8); font-size: 12px;">&nbsp;</div>
         </div>
-        <div class="clear_float"><!--//--></div>
+        <div class="clear_float" style="clear: both;"></div>
     </div>
-    <div role="main" class="ui-content" id="page_message_content" data-theme="b" data-content-theme="b">
-        <div id="msgpick_container" style="display: none;">
-            <input type="text" id="msgpick_input" name="number" data-theme="a" autocapitalize="off"/>
-            <button id="btn_msgpick" class="ui-btn ui-btn-corner-all ui-btn-b noshadow"><img src="images/btn_add_contact_txt.png" alt="add contact"></button>
-            <div id="msg_spacer">&nbsp;</div>
+    <div role="main" class="ui-content" id="page_message_content" data-theme="b" data-content-theme="b" style="padding: 15px; background-color: #f0f2f5; display: flex; flex-direction: column; height: calc(100vh - 120px);">
+        <div id="msgpick_container" style="display: none; display: flex; align-items: center; margin-bottom: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <input type="text" id="msgpick_input" name="number" data-theme="a" autocapitalize="off" placeholder="Search or add contact..." style="flex-grow: 1; border: none; padding: 10px 15px; font-size: 16px; background-color: transparent; outline: none; border-radius: 8px;">
+            <button id="btn_msgpick" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" style="background-color: #007bff; color: #fff; border: none; padding: 10px 15px; border-radius: 0 8px 8px 0; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
+                <img src="images/btn_add_contact_txt.png" alt="add contact" style="width: 20px; height: 20px;">
+            </button>
+            <div id="msg_spacer" style="height: 1px;"></div>
         </div>
-        <div id="msg_list">
-            <!--<b>Me:</b><p>Hello, how are you? Hello, how are you? Hello, how are you? Hello, how are you? Hello, how are you today?</p><p class="date">Jun 05, 2014 11:59</p><img class="sent_status" src="images/icon_chat_status_green.png" border="0"/>-->
-        </div>
-        <div id="msg_textarea_container">
-            <div class="separator_line_thick"><!--//--></div>
-            <div id="msg_gradient">&nbsp;</div>
-            <div id="msg_textarea_left">
-                <!--<textarea id="msg_textarea" class="noshadow" name="msg_textarea" data-theme="a" placeholder="Compose"></textarea>-->
-                <!--<input type="text" id="msg_textarea" name="msg_textarea" data-theme="a" placeholder="Compose"/>-->
-                <!--margin="0" padding="0" border="0px" outline="none" cursor="pointer  cursor: pointer;"-->
-                <div contenteditable="true" id="msg_textarea" class="noshadow" data-theme="a" style="margin:0; padding:0; border:0px; outline: none;" placeholder="Compose"></div>
-                <!--<div contenteditable="true" id="msg_textarea" class="noshadow" data-theme="a"</div>-->
+        <div id="msg_list" style="padding: 10px; background-color: #f0f2f5; flex-grow: 1; overflow-y: auto; border-radius: 8px; display: flex; flex-direction: column;">
             </div>
-            <div id="msg_textarea_right">
-                <span id="msg_charcount">0</span>
-                <button id="msg_btn_sendfile" class="ui-btn ui-btn-corner-all ui-btn-b noshadow"><img src="images/icon_sendfile.png" /></button>
-                <button id="msg_btn_smiley" class="ui-focus noshadow"><img id="msg_btn_smiley_img" src="images/smiley/btn_smiley.png" /></button>
-                <div id="smiley_container" style="display: none;">
-                    <div id="smiley_title_container">
-                        <span id="smiley_hint"></span>
-                        <button id="msg_btn_smiley_close">X</button>
+        <div id="msg_textarea_container" style="background-color: #fff; padding: 10px 15px; border-radius: 8px; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); margin-top: 15px; display: flex; align-items: flex-end; position: relative;">
+            <div id="msg_textarea_left" style="flex-grow: 1; margin-right: 10px;">
+                <div contenteditable="true" id="msg_textarea" class="noshadow" data-theme="a" placeholder="Tulis pesan..." style="min-height: 40px; max-height: 120px; overflow-y: auto; border: 1px solid #e0e0e0; padding: 8px 12px; font-size: 16px; border-radius: 20px; outline: none; background-color: #f9f9f9; resize: none; line-height: 1.4;"></div>
+            </div>
+            <div id="msg_textarea_right" style="display: flex; align-items: center; gap: 16px;">
+                <span id="msg_charcount" style="font-size: 12px; color: #888; white-space: nowrap;">0</span>
+                <button id="msg_btn_sendfile" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" style="background-color: #007bff; color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
+                    <span style="font-size: 20px; line-height: 1;">&#128206;</span> </button>
+                <button id="msg_btn_smiley" class="ui-focus noshadow" style="background-color: #007bff; color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s ease;">
+                    <span style="font-size: 20px; line-height: 1;">&#128512;</span> </button>
+
+                <div id="smiley_container" style="display: none; position: absolute; bottom: 70px; right: 15px; background-color: #fff; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 10px; z-index: 10; max-width: 250px; flex-wrap: wrap;">
+                    <div id="smiley_title_container" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; width: 100%;">
+                        <span id="smiley_hint" style="font-size: 14px; color: #555;">Choose an emoji</span>
+                        <button id="msg_btn_smiley_close" style="background-color: #dc3545; color: #fff; border: none; border-radius: 50%; width: 24px; height: 24px; font-size: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer;">X</button>
                     </div>
-                    <button id="btn_emoti_smiling" class="btn_emoti_icon"><img src="images/smiley/Smiling.gif" /></button>
-                    <button id="btn_emoti_sad" class="btn_emoti_icon"><img src="images/smiley/Sad.gif" /></button>
-                    <button id="btn_emoti_laughing" class="btn_emoti_icon"><img src="images/smiley/Laughing.gif" /></button>
-                    <button id="btn_emoti_winking" class="btn_emoti_icon"><img src="images/smiley/Winking.gif" /></button>
-                    <button id="btn_emoti_surprised" class="btn_emoti_icon"><img src="images/smiley/Surprised.gif" /></button>
-                    <button id="btn_emoti_straightface" class="btn_emoti_icon"><img src="images/smiley/StraightFace.gif" /></button>
-                    <button id="btn_emoti_worried" class="btn_emoti_icon"><img src="images/smiley/Worried.gif" /></button>
-                    <button id="btn_emoti_crying" class="btn_emoti_icon"><img src="images/smiley/Crying.gif" /></button>
-                    <button id="btn_emoti_cool" class="btn_emoti_icon"><img src="images/smiley/Cool.gif" /></button>
-                    <button id="btn_emoti_angel" class="btn_emoti_icon"><img src="images/smiley/Angel.gif" /></button>
-                    <button id="btn_emoti_kiss" class="btn_emoti_icon"><img src="images/smiley/Kiss.gif" /></button>
-                    <button id="btn_emoti_idea" class="btn_emoti_icon"><img src="images/smiley/Idea.gif" /></button>
-                    <button id="btn_emoti_thinking" class="btn_emoti_icon"><img src="images/smiley/Thinking.gif" /></button>
+                    <button id="btn_emoti_smiling" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Smiling.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_sad" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Sad.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_laughing" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Laughing.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_winking" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Winking.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_surprised" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Surprised.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_straightface" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/StraightFace.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_worried" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Worried.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_crying" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Crying.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_cool" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Cool.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_angel" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Angel.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_kiss" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Kiss.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_idea" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Idea.gif" style="width: 32px; height: 32px;"/></button>
+                    <button id="btn_emoti_thinking" class="btn_emoti_icon" style="background-color: transparent; border: none; padding: 5px; cursor: pointer;"><img src="images/smiley/Thinking.gif" style="width: 32px; height: 32px;"/></button>
                 </div>
-                <button id="btn_msgsend" class="ui-btn ui-btn-corner-all ui-btn-b noshadow"><img src="images/icon_message.png" alt="message"></button>
+                <button id="btn_msgsend" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" style="background-color: #007bff; color: #fff; border: none; padding: 8px 15px; border-radius: 20px; font-size: 16px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.3s ease;">
+                    <span style="font-size: 20px; margin-right: 5px;">&#9658;</span> Send
+                </button>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* Styling untuk Webkit browsers (Chrome, Safari, Edge) */
+    #msg_list::-webkit-scrollbar {
+        width: 8px; /* Lebar scroll bar */
+    }
+
+    #msg_list::-webkit-scrollbar-track {
+        background: #f0f2f5; /* Warna track/jalur scroll bar (putih terang, sesuai latar belakang msg_list) */
+        border-radius: 4px; /* Sudut membulat pada track */
+    }
+
+    #msg_list::-webkit-scrollbar-thumb {
+        background-color: #e0e0e0; /* Warna "thumb" (bagian yang digeser) - abu-abu muda */
+        border-radius: 4px; /* Sudut membulat pada thumb */
+        border: 2px solid #f0f2f5; /* Border agar thumb terlihat menonjol dari track */
+    }
+
+    /* Styling untuk Firefox */
+    #msg_list {
+        scrollbar-width: thin; /* "auto" atau "thin" */
+        scrollbar-color: #e0e0e0 #f0f2f5; /* thumb color track color */
+    }
+</style>
 <!-- END Message Page -->
 
 <!-- Internal Browser -->
@@ -1238,5 +1276,122 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 <!-- iframe used for attempting to load a custom protocol -->
 <iframe allow="microphone *; camera *; autoplay *" allowfullscreen="true" style="display:none" height="0" width="0" id="loader"></iframe>
 <div id="EXTERNREQUESTELEM" style="display: none;"></div>
+<!--bubble chat-->>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const msgTextarea = document.getElementById('msg_textarea');
+        const btnSend = document.getElementById('btn_msgsend');
+        const msgList = document.getElementById('msg_list');
+        const msgCharcount = document.getElementById('msg_charcount');
+
+        // Update character count
+        if (msgTextarea) {
+            msgTextarea.addEventListener('input', function() {
+                const charCount = msgTextarea.innerText.length;
+                if (msgCharcount) {
+                    msgCharcount.textContent = charCount;
+                }
+            });
+        }
+
+        // Function to format current time
+        function getCurrentTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const strMinutes = minutes < 10 ? '0' + minutes : minutes;
+            return `${hours}:${strMinutes} ${ampm}`;
+        }
+
+        // Function to create and append a message bubble
+        function appendMessage(message, type = 'me') {
+            const messageWrapper = document.createElement('div');
+            messageWrapper.className = 'message_bubble_wrapper';
+            messageWrapper.style.display = 'flex';
+            messageWrapper.style.marginBottom = '10px';
+
+            const messageBubble = document.createElement('div');
+            messageBubble.style.padding = '10px 15px';
+            messageBubble.style.borderRadius = '18px 18px 2px 18px';
+
+            const messageText = document.createElement('p');
+            messageText.style.margin = '0';
+            messageText.style.wordWrap = 'break-word';
+            messageText.style.fontSize = '15px';
+            messageText.innerText = message;
+
+            const messageInfo = document.createElement('div');
+            messageInfo.style.fontSize = '11px';
+            messageInfo.style.marginTop = '5px';
+            messageInfo.style.display = 'flex';
+            messageInfo.style.alignItems = 'center';
+            messageInfo.style.gap = '5px';
+
+            const timeSpan = document.createElement('span');
+            timeSpan.textContent = getCurrentTime();
+
+            if (type === 'me') {
+                messageWrapper.style.justifyContent = 'flex-end';
+                messageBubble.style.backgroundColor = '#D3EFFF';
+                messageBubble.style.color = '#333';
+                messageBubble.style.boxShadow = '0 1px 2px rgba(0,0,0,0.1)';
+                messageInfo.style.color = '#666';
+                messageInfo.style.justifyContent = 'flex-end';
+
+                const sentStatusImg = document.createElement('img');
+                sentStatusImg.className = 'sent_status';
+                sentStatusImg.src = 'images/icon_chat_status_green.png';
+                sentStatusImg.border = '0';
+                sentStatusImg.style.width = '14px';
+                sentStatusImg.style.height = '14px';
+                messageInfo.appendChild(timeSpan);
+                messageInfo.appendChild(sentStatusImg);
+            } else if (type === 'them') {
+                messageWrapper.style.justifyContent = 'flex-start';
+                messageBubble.style.backgroundColor = '#fff';
+                messageBubble.style.color = '#333';
+                messageBubble.style.borderRadius = '18px 18px 18px 2px';
+                messageBubble.style.boxShadow = '0 1px 2px rgba(0,0,0,0.08)';
+                messageInfo.style.color = '#888';
+                messageInfo.style.justifyContent = 'flex-start';
+                messageInfo.appendChild(timeSpan);
+            }
+
+            messageBubble.appendChild(messageText);
+            messageBubble.appendChild(messageInfo);
+            messageWrapper.appendChild(messageBubble);
+            msgList.appendChild(messageWrapper);
+
+            // Scroll to bottom
+            msgList.scrollTop = msgList.scrollHeight;
+        }
+
+        // Event listener for send button click
+        if (btnSend) {
+            btnSend.addEventListener('click', function() {
+                const messageContent = msgTextarea.innerText.trim();
+                if (messageContent) {
+                    appendMessage(messageContent, 'me'); // Append message as 'me' (sent by user)
+                    msgTextarea.innerText = ''; // Clear the textarea
+                    msgCharcount.textContent = '0'; // Reset char count
+                }
+            });
+        }
+
+        // Optional: Send message on Enter key press
+        if (msgTextarea) {
+            msgTextarea.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) { // Check for Enter key without Shift
+                    e.preventDefault(); // Prevent new line
+                    btnSend.click(); // Trigger send button click
+                }
+            });
+        }
+    });
+</script>
+
 </body>
 </html>

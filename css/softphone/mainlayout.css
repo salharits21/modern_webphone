@@ -1015,6 +1015,82 @@ body, #phone_app_main_container {
     font-weight: 500 !important;
     font-size: 0.6em !important;
 }
+/* === MODERNISASI DAFTAR PANGGILAN DI DIALPAD (V3 - FINAL) === */
+
+/* 1. Mengubah kontainer daftar menjadi kartu putih */
+#dialpad_list {
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #EAECEE;
+    margin: 15px !important;
+    box-sizing: border-box !important; /* KUNCI: Memperbaiki tembus layar */
+}
+
+/* 2. Paksa setiap item di dalam daftar untuk berlatar belakang putih */
+#dialpad_list > li,
+#dialpad_list > li > .ui-btn {
+    background-color: #ffffff !important;
+    border-color: #EAECEE !important;
+}
+
+#dialpad_list > li:first-child,
+#dialpad_list > li:first-child > a {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+#dialpad_list > li:last-child,
+#dialpad_list > li:last-child > a {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom: none !important;
+}
+
+/* 3. Menata ulang tata letak dan menghilangkan bayangan teks */
+#dialpad_list .ch_anchor {
+    display: flex !important;
+    align-items: center !important;
+    padding: 1em 1em !important;
+    position: relative !important;
+    min-height: 45px;
+    text-shadow: none !important; /* Hilangkan bayangan teks */
+}
+
+/* Ikon, Data, Tanggal, dan Durasi */
+#page_dialpad_content .ch_type { margin-right: 15px; text-shadow: none !important; }
+#page_dialpad_content .ch_data { flex-grow: 1; padding-right: 100px; text-shadow: none !important; }
+#page_dialpad_content .ch_name,
+#page_dialpad_content .ch_number { color: #1D2A32 !important; font-weight: 600; text-shadow: none !important; }
+#dialpad_list .missed_call .ch_name,
+#dialpad_list .missed_call .ch_number { color: #dc3545 !important; }
+
+#page_dialpad_content .ch_date,
+#page_dialpad_content .ch_duration {
+    position: absolute;
+    font-size: 0.8em;
+    color: #848C94 !important;
+    text-shadow: none !important;
+}
+#page_dialpad_content .ch_date { top: 1em; right: 3em; }
+#page_dialpad_content .ch_duration { bottom: 1em; right: 3em; }
+
+/* 4. Modernisasi Tombol Opsi (Menu di Kanan) */
+#dialpad_list .ui-li-link-alt {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 45px !important;
+}
+
+#dialpad_list .ui-li-link-alt .ui-icon-bars::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23848C94'%3e%3cpath d='M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM12,4a2,2,0,1,0,2,2A2,2,0,0,0,12,4ZM12,16a2,2,0,1,0,2,2A2,2,0,0,0,12,16Z'/%3e%3c/svg%3e") !important;
+    background-color: transparent !important;
+    background-size: 20px;
+    border: none !important;
+}
 
 /* === MODERNISASI FOOTER DIALPAD === */
 
@@ -1560,4 +1636,198 @@ body #page_contactdetails .ui-header a.ui-btn {
 
 #ct_allcontacts_entry {
     display: none !important;
+}
+
+/* === MODERNISASI HALAMAN RIWAYAT PANGGILAN === */
+
+/* 1. Mengatur Header dan Latar Belakang Halaman */
+body #page_callhistorylist .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body #page_callhistorylist .ui-header .ui-title,
+body #page_callhistorylist .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+#page_callhistorylist_content {
+    background-color: #ffffff !important; /* Latar belakang konten putih */
+    padding: 0 !important;
+}
+
+
+/* 2. Menata Ulang Daftar Riwayat Panggilan */
+#callhistorylist_list {
+    margin: 0 !important;
+}
+
+/* Styling untuk setiap item dalam daftar */
+#callhistorylist_list > li > a.ch_anchor {
+    display: flex; /* Gunakan Flexbox untuk tata letak */
+    align-items: center;
+    padding: 1em 1em !important;
+    background: #ffffff !important;
+    border-color: #EAECEE !important;
+    border-width: 0 0 1px 0 !important; /* Hanya garis bawah pemisah */
+    text-shadow: none !important;
+}
+
+/* Ikon Tipe Panggilan (masuk, keluar, tak terjawab) */
+#page_callhistorylist_content .ch_type {
+    margin-right: 15px; /* Jarak antara ikon dan teks */
+    flex-shrink: 0; /* Mencegah ikon menyusut */
+}
+#page_callhistorylist_content .ch_type img {
+    width: 20px;
+    height: 20px;
+}
+
+/* (Saran) Ganti ikon lama dengan SVG untuk kualitas lebih baik */
+/* Anda bisa mengganti sumber gambar di file .js Anda dengan SVG di bawah */
+/* .icon-missed { content: url('data:image/svg+xml,...'); } */
+
+
+/* Data Panggilan (Nama, Nomor, Durasi) */
+#page_callhistorylist_content .ch_data {
+    flex-grow: 1; /* Biarkan bagian ini mengambil sisa ruang */
+    line-height: 1.4;
+    padding-right: 100px;
+}
+
+#page_callhistorylist_content .ch_data .ch_name {
+    font-weight: 600;
+    color: #1D2A32 !important;
+    font-size: 1em;
+}
+
+#page_callhistorylist_content .ch_data .ch_number {
+    
+    color: #848C94 !important;
+    font-size: 0.8em;
+}
+
+/* Beri warna merah untuk panggilan tak terjawab (missed call) */
+#callhistorylist_list .missed_call .ch_name,
+#callhistorylist_list .missed_call .ch_number {
+    color: #dc3545 !important; /* Warna merah untuk missed call */
+}
+
+
+#page_callhistorylist_content .ch_data .ch_duration {
+    font-size: 0.8em;
+    color: #848C94 !important;
+}
+
+/* Tanggal dan Waktu Panggilan */
+#page_callhistorylist_content .ch_date {
+    font-size: 0.8em;
+    position: absolute;
+    top: 1em; /* Jarak dari atas */
+    right: 1em; /* Jarak dari kanan */
+    color: #848C94 !important;
+    text-align: right;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap;
+}
+
+#page_callhistorylist_content .ch_duration {
+    position: absolute;
+    bottom: 1em; /* Jarak dari bawah */
+    right: 1em; /* Jarak dari kanan */
+    font-size: 0.8em;
+    color: #848C94 !important;
+}
+
+/* === MODERNISASI HALAMAN DETAIL RIWAYAT PANGGILAN (V2) === */
+
+/* 1. Mengatur Header dan Latar Belakang Halaman */
+body #page_callhistorydetails .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body #page_callhistorydetails .ui-header .ui-title,
+body #page_callhistorydetails .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* 2. Perbaikan Layout Utama untuk Jarak dan Overflow */
+#page_callhistorydetails_content {
+    background-color: #F4F6F8 !important; /* Latar abu-abu muda */
+    padding: 15px !important;
+    box-sizing: border-box; /* Kunci untuk memperbaiki overflow */
+}
+
+/* 3. Hilangkan Garis Tekstur pada Nama Kontak */
+#ch_contact_name {
+    background-image: none !important;
+    background-color: #ffffff !important;
+    color: #1D2A32 !important;
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    padding: 20px !important;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+
+/* 4. Menata Ulang Kartu Aksi dan Menyamakan Alignment */
+/* Kontainer utama untuk semua kartu aksi (call, message, video) */
+#page_callhistorydetails_content .ch_container {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 15px; /* Memberi jarak antar kartu */
+    padding: 1em;
+    box-sizing: border-box !important;
+}
+
+/* Gunakan Flexbox untuk menata isi setiap kartu */
+#ch_call_entry, #ch_msg_entry, #ch_video_entry /* Asumsi nama ID untuk video */ {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Bagian data (teks) akan mengambil sisa ruang */
+#page_callhistorydetails_content .ch_data {
+    flex-grow: 1;
+    line-height: 1.4;
+}
+
+#page_callhistorydetails_content .ch_type {
+    color: #1D2A32 !important;
+    font-size: 1em !important;
+    font-weight: 500;
+}
+#page_callhistorydetails_content .ch_number {
+    color: #007BFF !important;
+    font-size: 1.1em !important;
+    font-weight: 600;
+}
+
+/* Bagian ikon akan memiliki lebar tetap */
+#page_callhistorydetails_content .ch_call_icon,
+#page_callhistorydetails_content .ch_msg_icon {
+    flex-shrink: 0; /* Mencegah ikon menyusut */
+    width: 40px;
+    height: 40px;
+    margin-left: 15px; /* Jarak antara teks dan ikon */
+    overflow: hidden;
+}
+
+#page_callhistorydetails_content .ch_call_entry:hover,
+#page_callhistorydetails_content .ch_msg_entry:hover {
+    background-color: #ffffff !important; /* Paksa background tetap putih */
 }

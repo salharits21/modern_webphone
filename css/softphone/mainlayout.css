@@ -1404,3 +1404,160 @@ body #page_contactslist .ui-header a.ui-btn {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
+
+/* === MODERNISASI HALAMAN DETAIL KONTAK === */
+
+/* 1. Mengatur Latar Belakang & Header Halaman */
+body #page_contactdetails .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body #page_contactdetails .ui-header .ui-title,
+body #page_contactdetails .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+#page_contactdetails_content {
+    background-color: #F4F6F8 !important; /* Latar abu-abu muda */
+    padding: 15px !important;
+    display: flex; /* Aktifkan flexbox untuk tata letak yang lebih baik */
+    flex-wrap: wrap; /* Izinkan item untuk turun ke baris baru */
+    gap: 15px; /* Jarak otomatis antar semua item */
+    box-sizing: border-box;
+    justify-content: center; 
+}
+
+
+/* 2. Menata Bagian Nama Kontak di Atas */
+#contact_name {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    text-align: left !important;
+    padding: 20px !important;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+#contact_name p {
+    font-size: 1.5em !important;
+    font-weight: 600;
+    color: #1D2A32;
+    margin: 0;
+    flex-grow: 1; /* Biarkan nama mengambil ruang yang tersisa */
+}
+
+/* Modernisasi ikon favorit (bintang) */
+#contact_favorite img {
+    width: 28px;
+    height: 28px;
+}
+
+
+/* 3. Menata Daftar Aksi (Telepon, Pesan, dll.) */
+#page_contactdetails_content .cd_container {
+    background-color: #ffffff !important;
+    border: none !important;
+    margin: 0 15px 12px 15px !important; /* Jarak antar item */
+    border-radius: 8px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+    padding: 0 !important;
+    width: 100%;
+    
+}
+
+#page_contactdetails_content .cd_call {
+    display: flex; /* Gunakan flexbox untuk penataan */
+    align-items: center;
+    padding: 1em;
+    cursor: pointer;
+}
+#page_contactdetails_content .cd_call:hover {
+    background-color: #F8F9FA !important;
+}
+
+/* Tipe dan nomor telepon */
+#page_contactdetails_content .cd_data {
+    flex-grow: 1;
+}
+#page_contactdetails_content .cd_type {
+    color: #1D2A32 !important;
+    font-size: 1em !important;
+    font-weight: 500;
+}
+#page_contactdetails_content .cd_number {
+    color: #007BFF !important; /* Warna nomor biru */
+    font-size: 1.1em !important;
+    font-weight: 600;
+}
+
+/* Mengganti ikon lama dengan SVG modern */
+#page_contactdetails_content .cd_icon {
+    margin: 0 !important;
+    height: 40px;
+    width: 40px;
+}
+#page_contactdetails_content .cd_icon img {
+    display: none; /* Sembunyikan gambar ikon lama */
+}
+
+/* Ikon Telepon Baru */
+#cd_call_1 .cd_icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007BFF'%3e%3cpath d='M16.57,14.43A1,1,0,0,0,16,14l-3-1a1,1,0,0,0-1.1.45l-1,1.72a12.58,12.58,0,0,1-5.45-5.45l1.72-1A1,1,0,0,0,8,7.57l-1-3A1,1,0,0,0,6,3.57,1,1,0,0,0,5,4,14.3,14.3,0,0,0,9.57,19a14.3,14.3,0,0,0,10.43,4.57,1,1,0,0,0,1-1,1,1,0,0,0-.57-1.1Z'/%3e%3c/svg%3e");
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* 4. Menata Tombol Aksi (Edit, Hapus) */
+#ct_edit_entry, #ct_delete_entry {
+    flex: 1;  /* Biarkan flexbox membagi ruang secara otomatis */
+    min-width: 0; /* Reset min-width agar tidak konflik */
+}
+
+#ct_edit_entry .cd_call, #ct_delete_entry .cd_call {
+    padding: none !important;
+    border-radius: 8px;
+    justify-content: center;
+    width: 100%; /* Biarkan tombol mengisi kontainer flex-nya */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#ct_edit_entry_button .cd_button,
+#ct_delete_entry_button .cd_button {
+    font-weight: 600;
+    font-size: 1em !important;
+    text-align: center;
+    width: 100%;
+}
+#ct_edit_entry .cd_call {
+    background-color: #ffffff !important;
+    border: 1px solid #007BFF !important;
+}
+/* Tombol Edit Kontak */
+#ct_edit_entry_button .cd_button {
+    color: #007BFF !important; /* Warna biru untuk edit */
+    width: 100%;
+}
+#ct_delete_entry .cd_call {
+    background-color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;
+    width: 100%;
+}
+
+/* Tombol Hapus Kontak (PENTING: gunakan warna merah untuk aksi destruktif) */
+#ct_delete_entry_button .cd_button {
+    color: #000000 !important; /* Warna merah untuk hapus */
+    width: 100%;
+}
+
+#ct_allcontacts_entry {
+    display: none !important;
+}

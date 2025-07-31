@@ -1007,6 +1007,7 @@ body, #phone_app_main_container {
     color: #1D2A32 !important; /* Warna gelap */
     font-size: 2.2em !important;
     font-weight: 400 !important;
+    text-shadow: none !important;
 }
 
 /* Teks kecil di bawah angka (ABC, DEF...) */
@@ -1014,6 +1015,7 @@ body, #phone_app_main_container {
     color: #848C94 !important; /* Warna abu-abu */
     font-weight: 500 !important;
     font-size: 0.6em !important;
+    text-shadow: none !important;
 }
 /* === MODERNISASI DAFTAR PANGGILAN DI DIALPAD (V3 - FINAL) === */
 
@@ -1830,4 +1832,104 @@ body #page_callhistorydetails .ui-header a.ui-btn {
 #page_callhistorydetails_content .ch_call_entry:hover,
 #page_callhistorydetails_content .ch_msg_entry:hover {
     background-color: #ffffff !important; /* Paksa background tetap putih */
+}
+
+/* === MODERNISASI HALAMAN TRANSFER FILE === */
+
+/* 1. Mengatur Header dan Latar Belakang Halaman */
+body #page_filetransfer .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body #page_filetransfer .ui-header .ui-title,
+body #page_filetransfer .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+#page_filetransfer_content {
+    background-color: #ffffff !important; /* Latar belakang konten putih */
+    padding: 15px !important;
+    box-sizing: border-box;
+}
+
+
+/* 2. Menata Input Penerima (Recipient) */
+#filetransf_container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Input field untuk nomor/tujuan */
+#filetransf_container .ui-input-text {
+    flex-grow: 1; /* Biarkan input mengambil sisa ruang */
+    margin: 0 !important;
+    border: 1px solid #CED4DA !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    background-color: #F8F9FA !important;
+}
+
+/* Tombol "Add Contact" di sebelah input */
+#btn_filetransfpick {
+    flex-shrink: 0; /* Mencegah tombol menyusut */
+    background-color: #E9ECEF !important;
+    border: 1px solid #CED4DA !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+#btn_filetransfpick img {
+    display: none; /* Sembunyikan ikon gambar lama */
+}
+/* Mengganti dengan ikon SVG modern */
+#btn_filetransfpick::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23495057'%3e%3cpath d='M16,11a1,1,0,0,0-1,1v3H12a1,1,0,0,0,0,2h3v3a1,1,0,0,0,2,0V17h3a1,1,0,0,0,0-2H17V12A1,1,0,0,0,16,11ZM9,12a4,4,0,1,0-4-4A4,4,0,0,0,9,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,9,6ZM15.5,22H3.85A2.43,2.43,0,0,1,1.5,19.42,8.34,8.34,0,0,1,9,14a8.34,8.34,0,0,1,7.5,5.42A2.43,2.43,0,0,1,15.5,22Z'/%3e%3c/svg%3e");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position: center !important;
+}
+
+
+/* 3. Modernisasi Tombol "Choose File" dan "Send" */
+/* Formulir utama */
+#frm_filetransf {
+    margin-top: 20px;
+}
+
+/* Styling untuk input file (teknik menyembunyikan input asli & styling label) */
+#frm_filetransf input[type="file"] {
+    border: 1px solid #CED4DA;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tombol "Send" */
+#frm_filetransf input[type="submit"],
+#btn_filetransf {
+    background-color: #007BFF !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+    width: 100%;
+    padding: 0.9em 0 !important;
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+    -webkit-appearance: none; /* Menghilangkan gaya default browser */
+}
+#frm_filetransf input[type="submit"]:hover,
+#btn_filetransf:hover {
+    background-color: #0069D9 !important;
 }

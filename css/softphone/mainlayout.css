@@ -2037,3 +2037,127 @@ body #page_filetransfer .ui-header a.ui-btn {
 #btn_hangup_img {
     filter: brightness(0) invert(1) !important; /* Ikon merah menjadi putih */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === MODERNISASI HALAMAN DAFTAR PESAN === */
+
+/* 1. Atur Latar Belakang Utama dan Tombol "New Message" */
+#page_messagelist_content {
+    background-color: #ffffff !important;
+    padding: 15px !important;
+    box-sizing: border-box;
+}
+
+#btn_newmessage {
+    background-color: #007BFF !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    width: 100%;
+    margin: 0 0 15px 0 !important; /* Jarak bawah dari daftar */
+}
+
+/* 2. Ubah Latar Belakang Daftar Pesan menjadi Putih */
+#messagelist_list {
+    margin: 0 !important;
+}
+
+#messagelist_list > li > a.msg_anchor {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px; /* Jarak antar item pesan */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1.2em 1em !important;
+}
+
+/* Mengatur tata letak di dalam setiap item */
+#messagelist_list .msg_item_container {
+    display: flex;
+    justify-content: space-between; /* Mendorong teks ke sisi berlawanan */
+    align-items: center;
+    width: 100%;
+}
+
+
+/* 3. Ubah Warna Teks di Pojok Kanan menjadi Abu-abu */
+#messagelist_list .msg_type {
+    color: #848C94 !important; /* Warna abu-abu */
+    font-size: 0.9em;
+    font-weight: normal !important;
+    white-space: nowrap; /* Mencegah teks turun baris */
+    text-shadow: none !important;
+}
+
+/* Atur juga warna teks utama */
+#messagelist_list .msg_name {
+    color: #1D2A32 !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+}
+
+/* Mengubah warna judul di halaman daftar kontak */
+#ctlist_title, #chlist_title,
+#settings_page_title {
+    color: #ffffff !important;
+}

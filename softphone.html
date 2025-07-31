@@ -227,7 +227,7 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
         <ul class="notification_list" id="contactslist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b">
         </ul>
         <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn">_Close</a>
-    </div>
+    </div> 
     <!--End notification panel-->
     <div id="contactslist_header" data-role="header" data-theme="b">
         <div id="contactslist_additional_header">
@@ -346,66 +346,122 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 
 
 <!-- CallHistoryList Page -->
-<div id="page_callhistorylist" class="all_app_pages" data-role="page">
-    <!--Notification panel-->
-    <div data-role="panel" id="callhistorylist_not" class="notification_panel" data-position="left" data-display="overlay" data-theme="b">
-        <div class="not_panel_title">_Notifications</div>
-        <ul class="notification_list" id="callhistorylist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b">
+<div id="page_callhistorylist" class="all_app_pages" data-role="page"
+     style="background-color: #f0f2f5; font-family: 'Segoe UI', Arial, sans-serif;">
+    <div data-role="panel" id="callhistorylist_not" class="notification_panel" data-position="left" data-display="overlay" data-theme="b"
+         style="background-color: #ffffff; box-shadow: 2px 0 5px rgba(0,0,0,0.2); border-right: 1px solid #e0e0e0;">
+        <div class="not_panel_title" style="color: #007bff; font-size: 18px; padding: 15px; border-bottom: 1px solid #e0e0e0; font-weight: bold;">Notifications</div>
+        <ul class="notification_list" id="callhistorylist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b"
+            style="padding: 0; margin: 0; border: none;">
+            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
+                <a href="#" style="color: #333; padding: 10px 15px; display: block; text-decoration: none;">Anda memiliki 2 panggilan tak terjawab.</a>
+            </li>
+            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
+                <a href="#" style="color: #333; padding: 10px 15px; display: block; text-decoration: none;">Pesan baru dari John.</a>
+            </li>
         </ul>
-        <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn">_Close</a>
+        <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn"
+           style="background-color: #007bff; color: #ffffff; border: 1px solid #0056b3; margin: 15px; padding: 8px 15px; text-decoration: none;">Close</a>
     </div>
-    <!--End notification panel-->
-    <div id="callhistorylist_header" data-role="header" data-theme="b">
-        <div id="callhistorylist_additional_header">
+    <div id="callhistorylist_header" data-role="header" data-theme="b"
+         style="background-color: #007bff; border-bottom: 1px solid #0056b3; padding: 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div id="callhistorylist_additional_header" style="display: flex; justify-content: space-between; align-items: center;">
             <div id="headertext_callhistorylist" style="display: none;" class="header_text"></div>
-            <div class="additional_header_left" id="callhistorylist_additional_header_left">
-                <div id="callhistorylist_presence"></div><div><span id="app_name_callhistorylist"></span></div>
+            <div class="additional_header_left" id="callhistorylist_additional_header_left" style="display: flex; align-items: center; gap: 5px;">
+                <div id="callhistorylist_presence" style="color: #ffffff; font-size: 14px;"></div>
+                <div><span id="app_name_callhistorylist" style="color: #ffffff; font-size: 16px; font-weight: bold;">My App</span></div>
             </div>
-            <div id="chlist_title" class="additional_header_middle">Call history</div><!--<div class="notification" id="callhistorylist_notification"></div>-->
-            <div class="additional_header_right" id="callhistorylist_additional_header_right">
-                <span id="callhistorylist_not_counter" class="ui-li-count ui-btn-corner-all not_btn_counter" style="display: none;"></span>
-                <a href="#callhistorylist_not" id="callhistorylist_not_btn" class="ui-btn ui-shadow ui-btn-inline ui-mini ui-icon-info ui-btn-icon-notext not_header_btn" style="display: none;">Clear</a>
-                <a href="#callhistorylist_menu" id="btn_callhistorylist_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown">Menu</a>
+            <div id="chlist_title" class="additional_header_middle" style="color: #ffffff; font-size: 20px; font-weight: bold; flex-grow: 1; text-align: center;">Call history</div>
+            <div class="additional_header_right" id="callhistorylist_additional_header_right"
+                 style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+                <span id="callhistorylist_not_counter" class="ui-li-count ui-btn-corner-all not_btn_counter"
+                      style="display: none; background-color: #dc3545; color: #ffffff; border-radius: 50%; padding: 3px 8px; font-size: 12px; min-width: 18px; text-align: center;"></span>
+                <a href="#callhistorylist_not" id="callhistorylist_not_btn" class="ui-btn ui-shadow ui-btn-inline ui-mini ui-icon-info ui-btn-icon-notext not_header_btn"
+                   style="display: none; background-color: transparent !important; border: none !important; box-shadow: none !important; font-size: 20px; color: #ffffff !important; text-shadow: none !important;">Clear</a>
+                
+                <a href="#callhistorylist_menu" id="btn_callhistorylist_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown"
+                   style="background-color: transparent !important; border: none !important; box-shadow: none !important; font-size: 24px; color: #ffffff !important; line-height: 1; padding: 0 8px; text-shadow: none !important;">Menu</a>
 
-                <div id="callhistorylist_menu" class="options_menu" data-role="popup">
-                    <ul id="callhistorylist_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
+                <div id="callhistorylist_menu" class="options_menu" data-role="popup"
+                     style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <ul id="callhistorylist_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a"
+                        style="list-style: none; padding: 10px 0; margin: 0;">
+                        <li><a href="#" style="color: #333333; text-decoration: none; padding: 10px 15px; display: block;">Clear Call History</a></li>
+                        <li><a href="#" style="color: #333333; text-decoration: none; padding: 10px 15px; display: block;">Settings</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="separator_line_thick"><!--//--></div>
+            <div class="separator_line_thick" style="display: none;"></div>
         </div>
-        <div class="status_container">
-            <img src="images/icon_encrypt.png" class="img_encrypt" title="Encrypted"><div class="status" id="status_callhistorylist">&nbsp;</div>
-            <div class="curr_user" id="curr_user_callhistorylist">&nbsp;</div>
+        <div class="status_container" style="display: flex; align-items: center; justify-content: flex-end; padding: 5px 15px; background-color: #0069d9; color: #cce5ff;">
+            <img src="images/icon_encrypt.png" class="img_encrypt" title="Encrypted" style="width: 16px; height: 16px; margin-right: 5px; filter: invert(70%);"><div class="status" id="status_callhistorylist" style="font-size: 13px;">Connected</div>
+            <div class="curr_user" id="curr_user_callhistorylist" style="font-size: 13px; margin-left: 10px;">user@example.com</div>
         </div>
-        <div class="navigation_bar" data-role="navbar" data-iconpos="top">
-            <ul id="ul_nav_ch">
-                <li><a id="nav_ch_dialpad" data-transition="slide" data-direction="reverse" data-icon=""><img src="images/tab_dialpad.png" alt="dialpad" /></a></li>
-                <li id="li_nav_ch_ct"><a id="nav_ch_contacts" data-transition="slide" data-direction="reverse" data-icon=""><img src="images/tab_contacts.png" alt="contacts" /></a></li>
-                <li><a id="nav_ch_callhistory" data-transition="slide" data-icon="" class="ui-btn-active ui-state-persist"><img src="images/tab_callog.png" alt="call history" /></a></li>
+        <div class="navigation_bar" data-role="navbar" data-iconpos="top" style="background-color: #007bff; border-top: 1px solid #0056b3;">
+            <ul id="ul_nav_ch" style="display: flex; justify-content: space-around; padding: 0; margin: 0; list-style: none;">
+                <li style="flex-grow: 1;">
+                    <a id="nav_ch_dialpad" data-transition="slide" data-direction="reverse" data-icon=""
+                       style="background-color: #007bff; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
+                        <img src="images/tab_dialpad.png" alt="dialpad"
+                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
+                    </a>
+                </li>
+                <li id="li_nav_ch_ct" style="flex-grow: 1;">
+                    <a id="nav_ch_contacts" data-transition="slide" data-direction="reverse" data-icon=""
+                       style="background-color: #007bff; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
+                        <img src="images/tab_contacts.png" alt="contacts"
+                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
+                    </a>
+                </li>
+                <li style="flex-grow: 1;">
+                    <a id="nav_ch_callhistory" data-transition="slide" data-icon="" class="ui-btn-active ui-state-persist"
+                       style="background-color: #0056b3; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
+                        <img src="images/tab_callog.png" alt="call history"
+                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="extra_header" id="extra_header_callhistorylist"></div>
     </div>
-    <div role="main" class="ui-content" id="page_callhistorylist_content" data-theme="b" data-content-theme="b">
-        <ul id="callhistorylist_list" class="mlistview" data-role="listview" data-theme="b" data-divider-theme="b" data-inset="true" data-icon="false">
-            <!--<li id="ch_item_0" data-theme="b"><a href="javascript:void(0)" class="ch_anchor" data-transition="slide">
-        	<div class="item_container">
-                    <div class="ch_type">
-                        <img src="images/icon_call_outgoing.png" />
+    <div role="main" class="ui-content" id="page_callhistorylist_content" data-theme="b" data-content-theme="b"
+         style="padding: 0; background-color: #f0f2f5;">
+        <ul id="callhistorylist_list" class="mlistview" data-role="listview" data-theme="b" data-divider-theme="b" data-inset="true" data-icon="false"
+            style="margin: 0; border: none;">
+            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
+                <a href="javascript:void(0)" class="ch_anchor" data-transition="slide" style="padding: 15px; display: block; text-decoration: none;">
+                    <div class="item_container" style="display: flex; align-items: center;">
+                        <div class="ch_type" style="margin-right: 15px;">
+                            <img src="images/icon_call_outgoing.png" alt="Outgoing Call" style="width: 32px; height: 32px;" />
+                        </div>
+                        <div class="ch_data" style="flex-grow: 1;">
+                            <div class="ch_name" style="font-size: 18px; font-weight: bold; color: #333;">John Smith</div>
+                            <div class="ch_number" style="font-size: 14px; color: #555; margin-top: 2px;">40123456789</div>
+                            <div class="ch_duration" style="font-size: 12px; color: #888; margin-top: 5px;">Duration: 02:45</div>
+                        </div>
+                        <div class="ch_date" style="font-size: 12px; color: #888; text-align: right;">Aug, 26 2013 10:55</div>
                     </div>
-                    <div class="ch_data">
-                	<div class="ch_name">John Smith</div>
-                        <div class="ch_number">40123456789</div>
-                        <div class="ch_duration">Duration: 02:45</div>
+                </a>
+            </li>
+            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
+                <a href="javascript:void(0)" class="ch_anchor" data-transition="slide" style="padding: 15px; display: block; text-decoration: none;">
+                    <div class="item_container" style="display: flex; align-items: center;">
+                        <div class="ch_type" style="margin-right: 15px;">
+                            <img src="images/icon_call_incoming.png" alt="Incoming Call" style="width: 32px; height: 32px;" />
+                        </div>
+                        <div class="ch_data" style="flex-grow: 1;">
+                            <div class="ch_name" style="font-size: 18px; font-weight: bold; color: #333;">Jane Doe</div>
+                            <div class="ch_number" style="font-size: 14px; color: #555; margin-top: 2px;">40198765432</div>
+                            <div class="ch_duration" style="font-size: 12px; color: #888; margin-top: 5px;">Duration: 01:10</div>
+                        </div>
+                        <div class="ch_date" style="font-size: 12px; color: #888; text-align: right;">Aug, 26 2013 11:30</div>
                     </div>
-                    <div class="ch_date">Aug, 26 2013 10:55</div>
-		</div>
-            </a></li>-->
+                </a>
+            </li>
         </ul>
     </div>
     <div id="footertext_callhistorylist" style="display: none;" class="header_text"></div>
-    <div id="advert_callhistorylist" class="advert_container">
+    <div id="advert_callhistorylist" class="advert_container" style="display: none;">
         <iframe frameborder="0" width="100%" scrolling="no" src="" name="advert_frame" id="advert_callhistorylist_frame"></iframe>
     </div>
 </div>

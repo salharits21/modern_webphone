@@ -1078,3 +1078,154 @@ body, #phone_app_main_container {
     height: 28px;
     opacity: 2.0; /* Buat ikon sedikit transparan agar tidak terlalu mencolok */
 }
+
+/* === MODERNISASI HALAMAN PENGATURAN === */
+
+/* 1. Mengatur Background dan Header Halaman */
+#page_settings {
+    background-color: #F4F6F8 !important; /* Warna latar sedikit abu-abu */
+}
+
+#page_settings_content {
+    background-color: #ffffff !important; /* Area konten utama putih bersih */
+}
+
+/* Samakan gaya header dengan halaman dialpad */
+#settings_header .ui-bar-b {
+    background: #007BFF !important; /* Warna biru solid */
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+body #page_settings .ui-header .ui-title,
+body #page_settings .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+#settings_header .ui-title, 
+#settings_header a {
+    color: #ffffff !important; /* Warna teks dan link di header menjadi putih */
+}
+body #page_settings .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+
+
+/* 2. Menata Ulang Daftar Pengaturan */
+#settings_list {
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Setiap item dalam daftar pengaturan */
+#settings_list > li.ui-li-static,
+#settings_list > li .ui-btn {
+    background-color: #ffffff !important;
+    border-color: #EAECEE !important; /* Garis pemisah antar item */
+    border-width: 0 0 1px 0 !important; /* Hanya garis bawah */
+    color: #1D2A32 !important; /* Warna teks utama gelap */
+    text-shadow: none !important;
+    padding: 1.2em 1em !important; /* Beri ruang lebih lega */
+}
+
+/* Menghilangkan bayangan saat item disentuh */
+#settings_list > li .ui-btn:hover,
+#settings_list > li .ui-btn:focus {
+    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Deskripsi kecil di bawah judul pengaturan */
+#settings_list .sett_comment {
+    color: #848C94 !important; /* Warna abu-abu untuk deskripsi */
+    font-size: 0.8em !important;
+    margin-top: 5px;
+}
+
+/* 3. Menata Formulir dan Tombol Login */
+#loginpage_container {
+    background-color: #ffffff !important;
+    padding: 20px !important;
+    border: none !important;
+}
+
+/* Tombol Login utama */
+#lp_btn_login {
+    background-color: #007BFF !important; /* Background biru */
+    color: #ffffff !important;             /* Teks putih */
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.9em 0 !important;
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    margin: 15px auto !important;
+    display: block !important;
+    width: 90% !important;
+}
+
+/* Jika tombol "Login" muncul sebagai item terakhir di daftar */
+#settings_list > li:last-of-type > a {
+    background-color: #007BFF !important;
+    color: #ffffff !important;
+    text-align: center;
+    font-weight: 600;
+}
+/* Efek saat tombol login disentuh */
+#lp_btn_login:hover {
+    background-color: #0069D9 !important;
+}
+
+/* Link "Sign up" dan "Forgot password" */
+#loginpage_container a {
+    color: #007BFF !important;
+    font-weight: 500 !important;
+}
+
+/* Input field pada form login */
+#loginpage_container .ui-input-text {
+    border: 1px solid #CED4DA !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    background-color: #F8F9FA !important;
+}
+#loginpage_container .ui-input-text input {
+    color: #1D2A32 !important;
+}
+/* === PERBAIKAN CHECKBOX (V2) === */
+
+/* Target langsung ke pseudo-element checkbox di dalam daftar pengaturan */
+#settings_list .ui-checkbox-on::after,
+#settings_list .ui-checkbox-off::after {
+    /* Reset posisi dan ukuran default */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    border-radius: 6px !important; /* Sudut membulat */
+}
+
+/* Styling untuk checkbox yang AKTIF (tercentang) */
+#settings_list .ui-checkbox-on::after {
+    background-color: #007BFF !important; /* Warna background biru */
+    border: 1px solid #007BFF !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M12.736 3.97a.75.75 0 0 1 1.047 1.078l-7.25 7.5a.75.75 0 0 1-1.065.04L2.47 8.64a.75.75 0 0 1 1.06-1.06l3.072 3.072 6.134-6.682a.75.75 0 0 1 1.06-.04z'/%3e%3c/svg%3e") !important;
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+}
+
+/* Styling untuk checkbox yang NON-AKTIF (tidak tercentang) */
+#settings_list .ui-checkbox-off::after {
+    background-color: #ffffff !important;   /* Background putih */
+    background-image: none !important;      /* Hilangkan ikon default */
+    border: 1px solid #CED4DA !important;   /* Border abu-abu */
+}

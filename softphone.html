@@ -227,7 +227,7 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
         <ul class="notification_list" id="contactslist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b">
         </ul>
         <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn">_Close</a>
-    </div> 
+    </div>
     <!--End notification panel-->
     <div id="contactslist_header" data-role="header" data-theme="b">
         <div id="contactslist_additional_header">
@@ -346,301 +346,133 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 
 
 <!-- CallHistoryList Page -->
-<div id="page_callhistorylist" class="all_app_pages" data-role="page"
+
+<!-- END CallHistoryList Page -->
+
+<!-- Call Page -->
+<div id="page_call" class="all_app_pages" data-role="page"
      style="background-color: #f0f2f5; font-family: 'Segoe UI', Arial, sans-serif;">
-    <div data-role="panel" id="callhistorylist_not" class="notification_panel" data-position="left" data-display="overlay" data-theme="b"
-         style="background-color: #ffffff; box-shadow: 2px 0 5px rgba(0,0,0,0.2); border-right: 1px solid #e0e0e0;">
-        <div class="not_panel_title" style="color: #007bff; font-size: 18px; padding: 15px; border-bottom: 1px solid #e0e0e0; font-weight: bold;">Notifications</div>
-        <ul class="notification_list" id="callhistorylist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b"
-            style="padding: 0; margin: 0; border: none;">
-            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
-                <a href="#" style="color: #333; padding: 10px 15px; display: block; text-decoration: none;">Anda memiliki 2 panggilan tak terjawab.</a>
-            </li>
-            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
-                <a href="#" style="color: #333; padding: 10px 15px; display: block; text-decoration: none;">Pesan baru dari John.</a>
-            </li>
-        </ul>
-        <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn"
-           style="background-color: #007bff; color: #ffffff; border: 1px solid #0056b3; margin: 15px; padding: 8px 15px; text-decoration: none;">Close</a>
-    </div>
-    <div id="callhistorylist_header" data-role="header" data-theme="b"
+    <div id="call_header" data-role="header" data-theme="b"
          style="background-color: #007bff; border-bottom: 1px solid #0056b3; padding: 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <div id="callhistorylist_additional_header" style="display: flex; justify-content: space-between; align-items: center;">
-            <div id="headertext_callhistorylist" style="display: none;" class="header_text"></div>
-            <div class="additional_header_left" id="callhistorylist_additional_header_left" style="display: flex; align-items: center; gap: 5px;">
-                <div id="callhistorylist_presence" style="color: #ffffff; font-size: 14px;"></div>
-                <div><span id="app_name_callhistorylist" style="color: #ffffff; font-size: 16px; font-weight: bold;">My App</span></div>
+        <div id="call_additional_header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="additional_header_left">
+                <span id="app_name_call" style="color: #ffffff; font-size: 16px; font-weight: bold;">WebPhone</span>
             </div>
-            <div id="chlist_title" class="additional_header_middle" style="color: #ffffff; font-size: 20px; font-weight: bold; flex-grow: 1; text-align: center;">Call history</div>
-            <div class="additional_header_right" id="callhistorylist_additional_header_right"
-                 style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
-                <span id="callhistorylist_not_counter" class="ui-li-count ui-btn-corner-all not_btn_counter"
-                      style="display: none; background-color: #dc3545; color: #ffffff; border-radius: 50%; padding: 3px 8px; font-size: 12px; min-width: 18px; text-align: center;"></span>
-                <a href="#callhistorylist_not" id="callhistorylist_not_btn" class="ui-btn ui-shadow ui-btn-inline ui-mini ui-icon-info ui-btn-icon-notext not_header_btn"
-                   style="display: none; background-color: transparent !important; border: none !important; box-shadow: none !important; font-size: 20px; color: #ffffff !important; text-shadow: none !important;">Clear</a>
-                
-                <a href="#callhistorylist_menu" id="btn_callhistorylist_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown"
+            <div class="additional_header_right">
+                <a href="#call_menu" id="btn_call_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-inline="true" data-transition="slidedown"
                    style="background-color: transparent !important; border: none !important; box-shadow: none !important; font-size: 24px; color: #ffffff !important; line-height: 1; padding: 0 8px; text-shadow: none !important;">Menu</a>
 
-                <div id="callhistorylist_menu" class="options_menu" data-role="popup"
+                <div id="call_menu" class="options_menu" data-role="popup"
                      style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <ul id="callhistorylist_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a"
+                    <ul data-role="listview" id="call_menu_ul" data-inset="true" data-theme="a" data-icon="false"
                         style="list-style: none; padding: 10px 0; margin: 0;">
-                        <li><a href="#" style="color: #333333; text-decoration: none; padding: 10px 15px; display: block;">Clear Call History</a></li>
-                        <li><a href="#" style="color: #333333; text-decoration: none; padding: 10px 15px; display: block;">Settings</a></li>
-                    </ul>
+                        </ul>
                 </div>
             </div>
             <div class="separator_line_thick" style="display: none;"></div>
         </div>
-        <div class="status_container" style="display: flex; align-items: center; justify-content: flex-end; padding: 5px 15px; background-color: #0069d9; color: #cce5ff;">
-            <img src="images/icon_encrypt.png" class="img_encrypt" title="Encrypted" style="width: 16px; height: 16px; margin-right: 5px; filter: invert(70%);"><div class="status" id="status_callhistorylist" style="font-size: 13px;">Connected</div>
-            <div class="curr_user" id="curr_user_callhistorylist" style="font-size: 13px; margin-left: 10px;">user@example.com</div>
+        <div class="status_container" style="display: flex; align-items: center; justify-content: flex-end; padding: 5px 15px; background-color: #0069d9; color: #cce5ff; text-align: right;">
+            <img src="images/icon_encrypt.png" class="img_encrypt" title="Encrypted" style="width: 16px; height: 16px; margin-right: 5px; filter: invert(70%);">
+            <div id="calledcaller" style="font-size: 13px; margin-right: 10px;">&nbsp;</div>
+            <div id="call_duration" style="font-size: 13px; margin-right: 10px;">&nbsp;</div>
+            <div id="status_call" style="font-size: 13px;">&nbsp;</div>
         </div>
-        <div class="navigation_bar" data-role="navbar" data-iconpos="top" style="background-color: #007bff; border-top: 1px solid #0056b3;">
-            <ul id="ul_nav_ch" style="display: flex; justify-content: space-around; padding: 0; margin: 0; list-style: none;">
-                <li style="flex-grow: 1;">
-                    <a id="nav_ch_dialpad" data-transition="slide" data-direction="reverse" data-icon=""
-                       style="background-color: #007bff; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
-                        <img src="images/tab_dialpad.png" alt="dialpad"
-                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
-                    </a>
-                </li>
-                <li id="li_nav_ch_ct" style="flex-grow: 1;">
-                    <a id="nav_ch_contacts" data-transition="slide" data-direction="reverse" data-icon=""
-                       style="background-color: #007bff; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
-                        <img src="images/tab_contacts.png" alt="contacts"
-                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
-                    </a>
-                </li>
-                <li style="flex-grow: 1;">
-                    <a id="nav_ch_callhistory" data-transition="slide" data-icon="" class="ui-btn-active ui-state-persist"
-                       style="background-color: #0056b3; color: #ffffff; border: none; padding: 14px 0; display: block; text-align: center; text-decoration: none; text-shadow: none !important;">
-                        <img src="images/tab_callog.png" alt="call history"
-                             style="width: 24px; height: 24px; filter: brightness(0) invert(1) !important; -webkit-filter: brightness(0) invert(1) !important; background: transparent !important; border: none !important; box-shadow: none !important; display: block !important; margin: 0 auto !important;" />
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="extra_header" id="extra_header_callhistorylist"></div>
+        <div class="clear_float" style="clear: both;"></div>
     </div>
-    <div role="main" class="ui-content" id="page_callhistorylist_content" data-theme="b" data-content-theme="b"
-         style="padding: 0; background-color: #f0f2f5;">
-        <ul id="callhistorylist_list" class="mlistview" data-role="listview" data-theme="b" data-divider-theme="b" data-inset="true" data-icon="false"
-            style="margin: 0; border: none;">
-            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
-                <a href="javascript:void(0)" class="ch_anchor" data-transition="slide" style="padding: 15px; display: block; text-decoration: none;">
-                    <div class="item_container" style="display: flex; align-items: center;">
-                        <div class="ch_type" style="margin-right: 15px;">
-                            <img src="images/icon_call_outgoing.png" alt="Outgoing Call" style="width: 32px; height: 32px;" />
-                        </div>
-                        <div class="ch_data" style="flex-grow: 1;">
-                            <div class="ch_name" style="font-size: 18px; font-weight: bold; color: #333;">John Smith</div>
-                            <div class="ch_number" style="font-size: 14px; color: #555; margin-top: 2px;">40123456789</div>
-                            <div class="ch_duration" style="font-size: 12px; color: #888; margin-top: 5px;">Duration: 02:45</div>
-                        </div>
-                        <div class="ch_date" style="font-size: 12px; color: #888; text-align: right;">Aug, 26 2013 10:55</div>
-                    </div>
-                </a>
-            </li>
-            <li style="background-color: #ffffff; border-bottom: 1px solid #eee;">
-                <a href="javascript:void(0)" class="ch_anchor" data-transition="slide" style="padding: 15px; display: block; text-decoration: none;">
-                    <div class="item_container" style="display: flex; align-items: center;">
-                        <div class="ch_type" style="margin-right: 15px;">
-                            <img src="images/icon_call_incoming.png" alt="Incoming Call" style="width: 32px; height: 32px;" />
-                        </div>
-                        <div class="ch_data" style="flex-grow: 1;">
-                            <div class="ch_name" style="font-size: 18px; font-weight: bold; color: #333;">Jane Doe</div>
-                            <div class="ch_number" style="font-size: 14px; color: #555; margin-top: 2px;">40198765432</div>
-                            <div class="ch_duration" style="font-size: 12px; color: #888; margin-top: 5px;">Duration: 01:10</div>
-                        </div>
-                        <div class="ch_date" style="font-size: 12px; color: #888; text-align: right;">Aug, 26 2013 11:30</div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div id="footertext_callhistorylist" style="display: none;" class="header_text"></div>
-    <div id="advert_callhistorylist" class="advert_container" style="display: none;">
-        <iframe frameborder="0" width="100%" scrolling="no" src="" name="advert_frame" id="advert_callhistorylist_frame"></iframe>
-    </div>
-</div>
-<!-- END CallHistoryList Page -->
 
-
-<!-- CallhistoryDetails Page -->
-<div id="page_callhistorydetails" class="all_app_pages" data-role="page">
-    <div id="callhistorydetails_header" data-role="header" data-theme="b">
-        <div id="callhistorydetails_additional_header">
-            <div class="additional_header_left">
-                <a id="chdetails_btnback" class="btn_header_back ui-btn" data-rel="back"><b>&LT;</b>&nbsp;Call history</a>
-            </div>
-            <div id="callhistorydetails_title" class="additional_header_middle">Info</div>
-            <div class="additional_header_right">
-                <a href="#callhistorydetails_menu" id="btn_callhistorydetails_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown">Menu</a>
-
-                <div id="callhistorydetails_menu" class="options_menu" data-role="popup">
-                    <ul id="callhistorydetails_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
-                    </ul>
-                </div>
-            </div>
-            <div class="separator_line_thick"><!--//--></div>
-        </div>
-    </div>
-    <div id="page_callhistorydetails_content" role="main" class="ui-content" data-theme="b" data-content-theme="b">
-        <div id="ch_contact_name">John Smith</div>
+    <div id="page_call_content" role="main" class="ui-content"
+         style="background-color: #ffffff; padding: 20px; text-align: center;">
         
-        <div id="ch_entry" class="ch_container">
-            <div id="ch_call_entry" class="ch_call">
-            	<div class="ch_data">
-                    <div class="ch_type">Outgoing call</div>
-                    <div class="ch_number">40123456789</div>
-                </div>
-                <div class="ch_call_icon">
-                    <img src="images/icon_call.png" alt="call" />
-                </div>
-            </div>
-            <div id="ch_msg_entry" class="ch_msg">
-            	<div class="ch_msg_icon">
-                    <img src="images/icon_message.png" alt="message" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END CallhistoryDetails Page -->
+        <div style="color: #dc3545; font-weight: bold; margin-bottom: 15px;">Server address unreachable</div>
+        <div style="color: #333333; font-size: 24px; font-weight: bold; margin-bottom: 15px;">780</div>
+        <div style="color: #666666; font-size: 18px; margin-bottom: 20px;">Routed</div>
 
 
-<!-- Call Page -->
-<div id="page_call" class="all_app_pages" data-role="page" data-theme="b">
-    <div id="call_header" data-role="header">
-        <div id="call_additional_header">
-            <div class="additional_header_left">
-                <span id="app_name_call"></span>
-            </div>
-            <div class="additional_header_right">
-                <a href="#call_menu" id="btn_call_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-inline="true" data-transition="slidedown">Menu</a>
-
-                <div id="call_menu" class="options_menu" data-role="popup" data-theme="a">
-                    <ul data-role="listview" id="call_menu_ul" data-inset="true" data-theme="a" data-icon="false">
-                    </ul>
-                </div>
-            </div>
-            <div class="separator_line_thick"><!--//--></div>
-        </div>
-        <div class="status_container">
-            <img src="images/icon_encrypt.png" class="img_encrypt" title="Encrypted"><div id="calledcaller">&nbsp;</div>
-            <div id="call_duration">&nbsp;</div>
-            <div id="status_call">&nbsp;</div>
-        </div>
-        <div class="clear_float"><!--//--></div>
-    </div>
-    <div id="page_call_content" role="main" class="ui-content">
-        <div id="mlcontainer" style="display: none;">
-            <div class="separator_line_thick"><!--//--></div>
-            <div id="ml_buttons"><!--
-                <button class="ui-btn line_btn noshadow" data-theme="b" id="btn_line_1">
-                    <span class="line_text">Line 1</span>
-                    <span class="line_status line_status_on" id="line_1_status" >&nbsp;</span>
-                </button><button class="ui-btn line_btn noshadow" data-theme="b" id="btn_line_2">
-                    <span class="line_text">Line 2</span>
-                    <span class="line_status" id="line_2_status" >&nbsp;</span>
-                </button>-->
-            </div>
-        </div>
-        
-        <div id="audiodevice_container"  style="display: none;"><button id="btn_audiodevice" class="ui-btn noshadow ui-btn-inline ui-corner-all">Audio devices</button></div>
-        <div id="volumecontrols" style="display: none;">
-            <div class="volume_labels">Volume in:</div>
-            <div class="volume_sliders"><input name="volumein" id="volumein" data-mini="true" min="0" max="100" value="50" type="range"></div>
-            <div style="float: left; width: 90%; clear: both;"><!--//--></div>
-            <div class="volume_labels">Volume out:</div>
-            <div class="volume_sliders"><input name="volumeout" id="volumeout" data-mini="true" min="0" max="100" value="50" type="range"></div>
-        </div>
-        <div id="contact_image">
+        <div id="contact_image" style="margin-bottom: 30px;">
             <div id="contact_details">
-                <img src="images/default_contact_img.png" id="contact_image_img" alt="contact image" />
-                <div id="page_call_additional_info"></div>
-                <div id="page_call_peer_details"></div>
+                <img src="images/default_contact_img.png" id="contact_image_img" alt="contact image"
+                     style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #007bff; background-color: #e0e0e0; padding: 5px;" />
+                <div id="page_call_additional_info" style="font-size: 16px; color: #333333; margin-top: 10px;"></div>
+                <div id="page_call_peer_details" style="font-size: 28px; font-weight: bold; color: #000000; margin-top: 5px;">780</div>
                 <div id="display_notmain_account" style="display: none;"></div>
             </div>
             <div id="video_container" style="display: none;">
-<!--
-            <div id="video_container">
-                <div id="div_video">
-                    <div id="div_video_remote">
-                        <video class="video" width="100%" height="100%" id="video_remote" autoplay="autoplay"></video>
-                    </div>
-                    <div id="div_video_local_wrapper">
-                        <iframe allow="microphone; camera" class="previewvideo"> </iframe>
-                        <div id="div_video_local" class="previewvideo">
-                            <video class="video" width="100%" height="100%" id="video_local" autoplay="autoplay" muted="true"></video>
-                        </div>
-                    </div>
-                    </div>
                 </div>
--->
-            </div>
         </div>
-        
-        <div class="clear_float"><!--//--></div>
-        
-        <div id="numpad">
-            <div id="numpad_number_container">
-                <span id="numpad_number"></span>
+
+        <div class="clear_float" style="clear: both;"></div>
+
+        <div id="callfunctions_layout" style="display: flex; justify-content: center; gap: 0px; margin-top: 20px; margin-bottom: 30px;">
+            <button class="call_action_btn ui-btn ui-shadow ui-corner-all" id="btn_mute"
+                    style="width: 70px; height: 70px; border-radius: 50%; background-color: #007bff !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; flex-direction: column; text-shadow: none !important; color: #ffffff !important; font-size: 12px;">
+                <img src="images/icon_mute.png" alt="Mute" style="width: 32px; height: 32px; filter: brightness(0) invert(1);" />
+                <span style="margin-top: 5px;">Mute</span>
+            </button>
+
+            <button class="call_action_btn ui-btn ui-shadow ui-corner-all" id="btn_speaker"
+                    style="width: 70px; height: 70px; border-radius: 50%; background-color: #007bff !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; flex-direction: column; text-shadow: none !important; color: #ffffff !important; font-size: 12px;">
+                <img src="images/icon_speaker.png" alt="Speaker" style="width: 32px; height: 32px; filter: brightness(0) invert(1);" />
+                <span style="margin-top: 5px;">Speaker</span>
+            </button>
+
+            <button class="call_action_btn ui-btn ui-shadow ui-corner-all" id="btn_hold"
+                    style="width: 70px; height: 70px; border-radius: 50%; background-color: #007bff !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; flex-direction: column; text-shadow: none !important; color: #ffffff !important; font-size: 12px;">
+                <img src="images/icon_hold.png" alt="Hold" style="width: 32px; height: 32px; filter: brightness(0) invert(1);" />
+                <span style="margin-top: 5px;">Hold</span>
+            </button>
+
+             <button class="call_action_btn ui-btn ui-shadow ui-corner-all" id="btn_numpad_toggle"
+                    style="width: 70px; height: 70px; border-radius: 50%; background-color: #007bff !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; flex-direction: column; text-shadow: none !important; color: #ffffff !important; font-size: 12px;">
+                <img src="images/icon_dialpad.png" alt="Numpad" style="width: 32px; height: 32px; filter: brightness(0) invert(1);" />
+                <span style="margin-top: 5px;">Numpad</span>
+            </button>
+        </div>
+
+        <div id="numpad" style="display: none; background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <div id="numpad_number_container" style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
+                <span id="numpad_number" style="font-size: 24px; color: #333333; font-weight: bold;"></span>
             </div>
-    
-            <div class="separator_color_bg"><!--//--></div>
             
-            <div class="ui-grid-b" id="numpad_btn_grid">
-                <div class="ui-block-a"><button id="numpad_btn_dp_1" class="ui-btn noshadow" ><span class="number">1</span><span class="smalltext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
-                <div class="ui-block-b"><button id="numpad_btn_dp_2" class="ui-btn noshadow" ><span class="number">2</span><span class="smalltext">ABC</span></button></div>
-                <div class="ui-block-c"><button id="numpad_btn_dp_3" class="ui-btn noshadow" ><span class="number">3</span><span class="smalltext">DEF&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
-
-                <div class="ui-block-a"><button id="numpad_btn_dp_4" class="ui-btn noshadow" ><span class="number">4</span><span class="smalltext">GHI&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
-                <div class="ui-block-b"><button id="numpad_btn_dp_5" class="ui-btn noshadow" ><span class="number">5</span><span class="smalltext">JKL&nbsp;</span></button></div>
-                <div class="ui-block-c"><button id="numpad_btn_dp_6" class="ui-btn noshadow" ><span class="number">6</span><span class="smalltext">MNO&nbsp;&nbsp;</span></button></div>
-
-                <div class="ui-block-a"><button id="numpad_btn_dp_7" class="ui-btn noshadow" ><span class="number">7</span><span class="smalltext">PQRS</span></button></div>
-                <div class="ui-block-b"><button id="numpad_btn_dp_8" class="ui-btn noshadow" ><span class="number">8</span><span class="smalltext">TUV</span></button></div>
-                <div class="ui-block-c"><button id="numpad_btn_dp_9" class="ui-btn noshadow" ><span class="number">9</span><span class="smalltext">WXYZ</span></button></div>
-
-                <div class="ui-block-a"><button id="numpad_btn_dp_ast" class="ui-btn noshadow" ><span class="number">&lowast;</span><span class="smalltext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
-                <div class="ui-block-b"><button id="numpad_btn_dp_0" class="ui-btn noshadow" ><span class="number">0</span><span class="smalltext">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
-                <div class="ui-block-c"><button id="numpad_btn_dp_diez" class="ui-btn noshadow" ><span class="number">#</span><span class="smalltext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></button></div>
+            <div class="ui-grid-b" id="numpad_btn_grid" style="margin-top: 15px;">
+                <div class="ui-block-a" style="padding: 5px;"><button id="numpad_btn_dp_1" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">1</span></button></div>
+                <div class="ui-block-b" style="padding: 5px;"><button id="numpad_btn_dp_2" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">2</span></button></div>
+                <div class="ui-block-c" style="padding: 5px;"><button id="numpad_btn_dp_3" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">3</span></button></div>
+                <div class="ui-block-a" style="padding: 5px;"><button id="numpad_btn_dp_4" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">4</span></button></div>
+                <div class="ui-block-b" style="padding: 5px;"><button id="numpad_btn_dp_5" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">5</span></button></div>
+                <div class="ui-block-c" style="padding: 5px;"><button id="numpad_btn_dp_6" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">6</span></button></div>
+                <div class="ui-block-a" style="padding: 5px;"><button id="numpad_btn_dp_7" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">7</span></button></div>
+                <div class="ui-block-b" style="padding: 5px;"><button id="numpad_btn_dp_8" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">8</span></button></div>
+                <div class="ui-block-c" style="padding: 5px;"><button id="numpad_btn_dp_9" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">9</span></button></div>
+                <div class="ui-block-a" style="padding: 5px;"><button id="numpad_btn_dp_ast" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">&lowast;</span></button></div>
+                <div class="ui-block-b" style="padding: 5px;"><button id="numpad_btn_dp_0" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">0</span></button></div>
+                <div class="ui-block-c" style="padding: 5px;"><button id="numpad_btn_dp_diez" class="ui-btn ui-corner-all numpad_round_btn" style="width: 60px; height: 60px; border-radius: 50%; background-color: #e0e0e0 !important; color: #333 !important; font-size: 24px; font-weight: bold; border: none !important; box-shadow: none !important;"><span class="number">#</span></button></div>
             </div>
-            <div class="separator_color_bg"><!--//--></div>
+            <div class="separator_color_bg" style="display: none;"></div>
         </div>
         
-        <div class="clear_float"><!--//--></div>
-        <div class="ui-grid-b" id="acceptreject_layout">
-            <div class="ui-block-a"><button data-theme="b" id="btn_accept" class="noshadow"><img src="images/btn_call_txt.png" alt="accept" /></button></div>
-            <!--<div class="ui-block-b"><button data-theme="b" class="noshadow" onClick="Mizulayout.Ignore();"><img src="images/btn_ignore_txt.png" /></button></div>-->
-            <div class="ui-block-c"><button data-theme="b" id="btn_reject" class="noshadow"><img src="images/btn_hangup_txt.png" alt="reject" /></button></div>
-        </div>
-        <div class="ui-grid-b" id="mline_layout">
-            <div class="ui-block-a"><button data-theme="b" id="btn_ml_accept" class="noshadow"><img src="images/btn_call_txt.png" alt="accept" /></button></div>
-            <div class="ui-block-b"><button data-theme="b" id="btn_ml_reject" class="noshadow"><img src="images/btn_hangup_txt.png" alt="hangup" /></button></div>
-            <div class="ui-block-c"><button data-theme="b" id="btn_ml_more" class="noshadow"><img src="images/btn_menu_txt.png" alt="options" /></button></div>
-        </div>
+        <div class="clear_float" style="clear: both;"></div>
         
-        <div class="clear_float"><!--//--></div>
-        
-        <div id="hangup_layout">
-            <button data-theme="d" class="noshadow" id="btn_hangup"><img id="btn_hangup_img" src="images/btn_hangup_txt.png" alt="hangup" /></button>
-        </div>
-        
-        <div class="separator_color_bg"><!--//--></div>
-        
-        <!--<div id="callfunctions_layout">
-            <div class="callfunc_btn_container">
-                <button class="ui-btn callfunc_btn noshadow" data-theme="b" id="btn_[REPLACESTR]">
-                    <img src="images/btn_[REPLACESTR]_txt.png" />
-                    <span class="callfunc_status" id="[REPLACESTR]_status" >&nbsp;</span>
+        <div class="ui-grid-a" id="acceptreject_layout" style="margin-top: 30px; display: flex; justify-content: center; gap: 40px;">
+            <div class="ui-block-a" style="width: auto !important; padding: 0;">
+                <button data-theme="b" id="btn_accept" class="call_action_btn ui-btn ui-shadow ui-corner-all"
+                        style="width: 80px; height: 80px; border-radius: 50%; background-color: #28a745 !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-shadow: none !important;">
+                    <img src="images/icon_call.png" alt="accept" style="width: 40px; height: 40px; filter: brightness(0) invert(1);" />
                 </button>
             </div>
-        </div>-->
-        <div id="callfunctions_layout"></div>
+            <div class="ui-block-c" style="width: auto !important; padding: 0;">
+                <button data-theme="b" id="btn_reject" class="call_action_btn ui-btn ui-shadow ui-corner-all"
+                        style="width: 80px; height: 80px; border-radius: 50%; background-color: #dc3545 !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-shadow: none !important;">
+                    <img src="images/icon_hangup.png" alt="reject" style="width: 40px; height: 40px; filter: brightness(0) invert(1);" />
+                </button>
+            </div>
+        </div>
+
+        <div id="hangup_layout" style="margin-top: 30px; text-align: center;">
+            <button data-theme="d" class="call_action_btn ui-btn ui-shadow ui-corner-all" id="btn_hangup"
+                    style="width: 80px; height: 80px; border-radius: 50%; background-color: #dc3545 !important; border: none !important; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: inline-flex; align-items: center; justify-content: center; text-shadow: none !important;">
+                <img id="btn_hangup_img" src="images/icon_hangup.png" alt="hangup" style="width: 40px; height: 40px; filter: brightness(0) invert(1);" />
+            </button>
+        </div>
     </div>
 </div>
 <!-- END Call Page -->
@@ -734,45 +566,22 @@ Read more details in the webphone documentation: "Web Dialer/Softphone" chapter.
 <!-- END AddEditContact Page -->
 
 <!-- MessageList Page -->
-<div id="page_messagelist" class="all_app_pages" data-role="page">
-    <!--Notification panel-->
-    <div data-role="panel" id="messagelist_not" class="notification_panel" data-position="left" data-display="overlay" data-theme="b">
-        <div class="not_panel_title">_Notifications</div>
-        <ul class="notification_list" id="messagelist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b">
-        </ul>
-        <a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn">_Close</a>
-    </div>
-    <!--End notification panel-->
-    <div id="messagelist_header" data-role="header" data-theme="b">
-        <div id="messagelist_additional_header">
-            <div id="messagelist_additional_header_left" class="additional_header_left">
-                <a id="msglist_btnback" class="btn_header_back ui-btn" data-rel="back"><b>&LT;</b>&nbsp;Back</a>
-            </div>
-            <div id="msglist_title" class="additional_header_middle">Mesages</div><!--<div class="notification" id="messagelist_notification"></div>-->
-            <div class="additional_header_right" id="messagelist_additional_header_right">
-                <span id="messagelist_not_counter" class="ui-li-count ui-btn-corner-all not_btn_counter" style="display: none;">12</span>
-                <a href="#messagelist_not" id="messagelist_not_btn" class="ui-btn ui-shadow ui-btn-inline ui-mini ui-icon-info ui-btn-icon-notext not_header_btn" style="display: none;">Clear</a>
-                <a href="#messagelist_menu" id="btn_messagelist_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown">Menu</a>
-
-                <div id="messagelist_menu" class="options_menu" data-role="popup">
-                    <ul id="messagelist_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
-                    </ul>
-                </div>
-            </div>
-            <div class="separator_line_thick"><!--//--></div>
+<div id="page_messagelist" class="all_app_pages" data-role="page" style="background-color: #ffffff;"> <div data-role="panel" id="messagelist_not" class="notification_panel" data-position="left" data-display="overlay" data-theme="b" style="background-color: #e0f2f7;"> <div class="not_panel_title" style="color: #007bff;">_Notifications</div> <ul class="notification_list" id="messagelist_notification_list" data-role="listview" data-inset="true" data-icon="false" data-theme="b">
+</ul>
+<a href="javascript:;" data-rel="close" class="ui-btn ui-mini ui-shadow ui-corner-all ui-btn-b ui-btn-inline not_close_btn" style="background-color: #007bff; color: #ffffff;">_Close</a> </div>
+<div id="messagelist_header" data-role="header" data-theme="b" style="background-color: #007bff; border-bottom: 1px solid #0056b3;"> <div id="messagelist_additional_header">
+    <div id="messagelist_additional_header_left" class="additional_header_left">
+        <a id="msglist_btnback" class="btn_header_back ui-btn" data-rel="back" style="color: #ffffff;"><b>&LT;</b>&nbsp;Back</a> </div>
+    <div id="msglist_title" class="additional_header_middle" style="color: #ffffff;">Messages</div><div class="additional_header_right" id="messagelist_additional_header_right">
+        <span id="messagelist_not_counter" class="ui-li-count ui-btn-corner-all not_btn_counter" style="display: none; background-color: #ffffff; color: #007bff;">12</span> <a href="#messagelist_not" id="messagelist_not_btn" class="ui-btn ui-shadow ui-btn-inline ui-mini ui-icon-info ui-btn-icon-notext not_header_btn" style="display: none; background-color: transparent; border: none;"></a>
+        <a href="#messagelist_menu" id="btn_messagelist_menu" data-rel="popup" class="btn_toolbar_menu ui-btn ui-icon-bars ui-btn-icon-notext" data-transition="slidedown" style="color: #ffffff;">Menu</a> <div id="messagelist_menu" class="options_menu" data-role="popup" style="background-color: #ffffff;"> <ul id="messagelist_menu_ul" data-role="listview" data-inset="true" data-icon="false" data-theme="a">
+                </ul>
         </div>
     </div>
-    <div role="main" class="ui-content" id="page_messagelist_content" data-theme="b" data-content-theme="b">
-        <div id="btn_newmessage_container"><button id="btn_newmessage" class="ui-btn ui-btn-corner-all ui-btn-b noshadow">New message</button></div>
-        <ul id="messagelist_list" class="mlistview" data-role="listview" data-theme="b" data-inset="true" data-icon="false">
-            <!--<li id="msgitem_0"><a href="javascript:void(0)" class="msg_anchor" data-transition="slide">
-                <div class="msg_item_container">
-                    <div class="msg_name">Joghn Smith - <span id="msgitemnumber_0">40123456789</span><span class="ui-li-count">2</span></div>
-                    <div id="msgtype_0" class="msg_type">SMS</div>
-		</div>
-            </a></li>-->
-        </ul>
-    </div>
+    <div class="separator_line_thick" style="background-color: #0056b3;"></div> </div>
+</div>
+<div role="main" class="ui-content" id="page_messagelist_content" data-theme="b" data-content-theme="b" style="background-color: #ffffff;"> <div id="btn_newmessage_container"><button id="btn_newmessage" class="ui-btn ui-btn-corner-all ui-btn-b noshadow" style="background-color: #007bff; color: #ffffff; border: none;">New message</button></div> <ul id="messagelist_list" class="mlistview" data-role="listview" data-theme="b" data-inset="true" data-icon="false" style="background-color: #ffffff; border: 1px solid #dee2e6;"> </ul>
+</div>
 </div>
 <!-- END MessageList Page -->
 

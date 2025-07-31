@@ -1831,3 +1831,108 @@ body #page_callhistorydetails .ui-header a.ui-btn {
 #page_callhistorydetails_content .ch_msg_entry:hover {
     background-color: #ffffff !important; /* Paksa background tetap putih */
 }
+
+
+#page_call {
+    background-color: #ffffff; /* Putih bersih */
+}
+#call_header {
+    background-color: #007bff; /* Biru cerah */
+    border-bottom: 1px solid #0056b3; /* Garis bawah biru tua untuk kontras */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Tambahkan sedikit bayangan */
+}
+#app_name_call,
+#call_additional_header_left .btn_header_back, /* Tombol "Back" */
+#call_additional_header_left .btn_header_back b, /* Teks bold di tombol "Back" */
+#msglist_title, /* Judul di header, jika ada di call page (biasanya di messagelist) */
+#btn_call_menu, /* Tombol "Menu" */
+#calledcaller,
+#call_duration,
+#status_call {
+    color: #ffffff !important; /* Pastikan teks putih */
+    text-shadow: none !important; /* Hapus bayangan teks jika ada dari tema JQM */
+}
+.status_container {
+    background-color: #0069d9; /* Biru yang sedikit lebih gelap dari header utama */
+    color: #cce5ff; /* Teks biru sangat muda untuk status */
+}
+.img_encrypt {
+    filter: invert(100%); /* Ubah ikon menjadi putih */
+}
+#page_call_content {
+    background-color: #ffffff; /* Putih */
+    padding: 20px; /* Jaga padding */
+    text-align: center; /* Jaga perataan tengah */
+}
+#page_call_content div[style*="color: #dc3545;"] { /* Menargetkan div dengan style tertentu */
+    color: #dc3545; /* Merah, biarkan tetap merah untuk pesan error */
+}
+#page_call_content div[style*="font-size: 24px; font-weight: bold;"] {
+    color: #333333; /* Hitam keabuan */
+}
+#page_call_content div[style*="font-size: 18px; margin-bottom: 20px;"] {
+    color: #666666; /* Abu-abu sedang */
+}
+#contact_image_img {
+    border: 3px solid #007bff !important; /* Border biru untuk gambar profil */
+    background-color: #e0e0e0; /* Biarkan abu-abu terang sebagai fallback */
+}
+#page_call_peer_details {
+    color: #000000 !important; /* Hitam bersih */
+    font-size: 28px !important;
+    font-weight: bold !important;
+}
+#callfunctions_layout {
+    gap: 20px; /* Jaga gap agar tidak tabrakan dengan perubahan sebelumnya */
+}
+.call_action_btn {
+    background-color: #007bff !important; /* Latar belakang biru */
+    color: #ffffff !important; /* Teks putih */
+    border: none !important; /* Hapus border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important; /* Tambahkan bayangan */
+    text-shadow: none !important; /* Hapus bayangan teks */
+}
+.call_action_btn img {
+    filter: brightness(0) invert(1) !important; /* Mengubah ikon menjadi putih */
+}
+#numpad {
+    background-color: #f8f9fa; /* Latar belakang putih keabuan untuk numpad */
+    border: 1px solid #dee2e6; /* Border tipis abu-abu */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sedikit bayangan */
+}
+#numpad_number_container {
+    background-color: #e9ecef; /* Latar belakang area tampilan angka numpad */
+    border: 1px solid #ddd;
+}
+#numpad_number {
+    color: #333333; /* Warna teks angka numpad */
+}
+.numpad_round_btn {
+    background-color: #ffffff !important; /* Tombol numpad putih */
+    color: #007bff !important; /* Teks angka biru */
+    border: 1px solid #007bff !important; /* Border biru */
+    box-shadow: none !important; /* Hapus bayangan bawaan JQM */
+}
+.numpad_round_btn .number {
+    color: #007bff !important; /* Pastikan angka pada tombol juga biru */
+}
+#btn_accept {
+    background-color: #28a745 !important; /* Hijau untuk tombol terima */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+#btn_accept img {
+    filter: brightness(0) invert(1) !important;
+}
+#btn_reject,
+#btn_hangup {
+    background-color: #dc3545 !important; /* Merah untuk tombol tolak/tutup */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+#btn_reject img,
+#btn_hangup_img {
+    filter: brightness(0) invert(1) !important; /* Ikon merah menjadi putih */
+}

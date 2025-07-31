@@ -864,7 +864,7 @@ body, #phone_app_main_container {
     font-family: 'Helvetica Neue', Arial, sans-serif; /* Font yang lebih modern */
     background-color: #F4F6F8 !important; /* Warna latar belakang abu-abu muda */
 }
-#page_dialpad_content {
+#page_dialpad {
     background-color: #ffffff !important;
 }
 
@@ -874,7 +874,7 @@ body, #phone_app_main_container {
 
 /* Modernisasi Header */
 #dialpad_header, #dialpad_header .ui-bar-b {
-    background: linear-gradient(to right, #2E9AFE, #00BFFF); /* Gradient biru modern */
+    background-color: #007BFF !important; /* Gradient biru modern */
     border: none !important; /* Hilangkan border bawah */
     color: #ffffff !important; /* Warna teks putih */
     text-shadow: none !important; /* Hilangkan text shadow lama */
@@ -1228,4 +1228,179 @@ body #page_settings .ui-header {
     background-color: #ffffff !important;   /* Background putih */
     background-image: none !important;      /* Hilangkan ikon default */
     border: 1px solid #CED4DA !important;   /* Border abu-abu */
+}
+/* 1. Pengaturan Latar Belakang dan Header */
+#page_contactslist {
+    background-color: #F4F6F8 !important;
+}
+    
+/* === MODERNISASI HALAMAN DAFTAR KONTAK === */
+
+/* 1. Mengatur Header dan Latar Belakang Halaman */
+body #page_contactslist .ui-header {
+    background: #007BFF !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+body #page_contactslist .ui-header .ui-title,
+body #page_contactslist .ui-header a.ui-btn {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+#page_contactslist_content {
+    background-color: #ffffff !important; /* Latar belakang konten putih */
+}
+
+
+/* 2. Modernisasi Search Bar (Pencarian Kontak) */
+#page_contactslist_content .ui-input-search {
+    background-color: #F4F6F8 !important; /* Warna latar sedikit abu-abu */
+    border: 1px solid #EAECEE !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    margin: 15px !important;
+    padding: 2px !important;
+}
+
+#page_contactslist_content .ui-input-search input {
+    color: #1D2A32 !important;
+    text-shadow: none !important;
+}
+
+
+/* 3. Menata Ulang Daftar Kontak */
+/* Menghilangkan style 'inset' bawaan */
+#contactslist_list.ui-listview-inset {
+    margin: 0 !important;
+}
+
+/* Styling untuk pemisah huruf (A, B, C...) */
+#contactslist_list .ui-li-divider {
+    background-color: #F4F6F8 !important; /* Latar abu-abu muda */
+    color: #007BFF !important; /* Teks pemisah biru */
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+/* Styling untuk setiap item kontak */
+#contactslist_list > li > a.ui-btn {
+    background-color: #ffffff !important;
+    border-color: #EAECEE !important;
+    border-width: 0 0 1px 0 !important; /* Hanya garis bawah pemisah */
+    color: #1D2A32 !important; /* Warna nama kontak */
+    font-weight: 500;
+    text-shadow: none !important;
+    padding: 1.2em 1em !important;
+}
+
+/* Efek saat item disentuh */
+#contactslist_list > li > a.ui-btn:hover {
+    background-color: #F8F9FA !important; /* Sedikit berubah warna saat disentuh */
+}
+/* === MODERNISASI POP-UP / DIALOG === */
+
+/* 1. Mengatur kontainer pop-up secara umum */
+.ui-popup-container, .ui-dialog-contain {
+    border-radius: 12px !important; /* Beri sudut membulat pada pop-up */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* 2. Styling Header Pop-up (misal: "Install") */
+.ui-popup-container .ui-header, .ui-dialog .ui-header {
+    background: #007BFF !important; /* Latar biru */
+    color: #ffffff !important;
+    text-shadow: none !important;
+    border-bottom: none !important;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* 3. Styling Footer Pop-up (Bagian Bawah) */
+.ui-popup-container .ui-footer, .ui-dialog .ui-footer {
+    background: #ffffff !important; /* Latar putih seperti yang diminta */
+    border-top: 1px solid #EAECEE !important; /* Garis pemisah tipis */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex; /* Aktifkan Flexbox */
+    justify-content: space-around; /* Beri jarak merata antar tombol */
+    gap: 10px; /* Jarak spesifik antar tombol */
+    padding: 10px 15px; /* Atur ulang padding footer */
+}
+
+/* 4. Styling Tombol di dalam Footer (misal: "Download") */
+.ui-popup-container .ui-footer .ui-btn, .ui-dialog .ui-footer .ui-btn {
+    background-color: #007BFF !important; /* Tombol jadi biru */
+    color: #ffffff !important;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+    margin: 10px auto !important; /* Posisi di tengah dengan jarak */
+    display: block;
+    width: 80%; /* Lebar tombol */
+    font-weight: 600;
+}
+
+.ui-popup-container .ui-footer .ui-btn:last-child,
+.ui-dialog .ui-footer .ui-btn:last-child {
+    background-color: #ffffff !important;
+    color: #007BFF !important;
+    border: 1px solid #007BFF !important;
+}
+
+/* === MODERNISASI MENU DROPDOWN === */
+
+/* 1. Styling Tombol Menu (Hamburger) di Kanan Atas */
+.btn_toolbar_menu {
+    background-color: #007BFF !important; /* Latar biru transparan */
+    border-radius: 8px !important;
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+    border: none !important;
+}
+
+/* 2. Styling Kontainer Dropdown Menu */
+.options_menu.ui-popup-container {
+    border-radius: 12px !important; /* Sudut membulat */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; /* Bayangan halus */
+}
+
+.options_menu {
+    border: none !important;
+}
+
+/* Memberi sedikit padding di dalam menu */
+.options_menu .ui-listview {
+    padding: 5px 0;
+}
+
+
+/* 3. Styling Setiap Item di Dalam Menu */
+.options_menu li > .ui-btn {
+    background: #ffffff !important;
+    color: #1D2A32 !important; /* Warna teks gelap */
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    border: none !important; /* Menghilangkan garis pemisah */
+    padding: 1em 1.5em !important; /* Menambah ruang padding */
+}
+
+/* Efek hover saat item menu dipilih */
+.options_menu li > .ui-btn:hover {
+    background-color: #F4F6F8 !important; /* Warna latar sedikit abu-abu */
+}
+
+/* Mengatur sudut membulat untuk item pertama dan terakhir */
+.options_menu li:first-child > .ui-btn {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.options_menu li:last-child > .ui-btn {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }

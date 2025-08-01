@@ -1050,7 +1050,7 @@ body, #phone_app_main_container {
     border-radius: 12px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
     border: 1px solid #EAECEE;
-    margin: 15px !important;
+
     box-sizing: border-box !important; /* KUNCI: Memperbaiki tembus layar */
 }
 
@@ -2249,4 +2249,155 @@ body #page_filetransfer .ui-header a.ui-btn {
 /* Mengubah bagian track di ujung-ujung scrollbar */
 ::-webkit-scrollbar-track-piece {
     background-color: #f1f1f1 !important; /* Menyamakan dengan warna track */
+}
+
+/* === MODERNISASI PANEL NOTIFIKASI === */
+
+/* 1. Mengatur Kontainer Panel Utama */
+.notification_panel.ui-panel {
+    background-color: #ffffff !important;
+    box-shadow: 4px 0px 20px rgba(0,0,0,0.1); /* Bayangan di sisi kanan */
+}
+.notification_panel .ui-panel-inner {
+    padding: 0 !important; /* Hapus padding default */
+}
+
+/* 2. Menata Ulang Judul Panel */
+.not_panel_title {
+    background-color: #ffffff !important;
+    color: #1D2A32 !important;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 20px;
+    border-bottom: 1px solid #EAECEE;
+}
+
+
+/* 3. Menata Daftar Notifikasi */
+.notification_list {
+    padding: 0 20px;
+}
+.notification_list > li {
+    background: transparent !important;
+    border-color: #EAECEE !important; /* Garis pemisah antar notifikasi */
+}
+
+/* Teks di dalam setiap notifikasi */
+.notification_list .nt_anchor {
+    padding: 1em 0 !important; /* Atur ulang padding */
+}
+.notification_list .nt_title {
+    color: #1D2A32 !important;
+    font-weight: 600;
+    font-size: 1em;
+}
+.notification_list .nt_desc {
+    color: #5A646B !important;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin: 4px 0;
+}
+.notification_list .nt_date {
+    color: #848C94 !important; /* Warna abu-abu */
+    font-size: 0.8em;
+    position: static !important; /* Reset posisi agar normal */
+    float: none !important;
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* 4. Modernisasi Tombol Tutup (Close) */
+/* Tombol 'X' di setiap item */
+.notification_list .nt_menu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.notification_list .nt_menu::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23848C94'%3e%3cpath d='M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z'/%3e%3c/svg%3e") !important;
+    background-color: transparent !important;
+    background-size: 16px;
+}
+
+/* Tombol "Close" utama di bawah */
+.not_close_btn {
+    background-color: #007BFF !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    width: calc(100% - 40px) !important;
+    margin: 20px !important;
+}
+
+/* === MODERNISASI TOMBOL NOTIFIKASI HEADER === */
+
+/* 1. Menata Ulang Tombol Notifikasi */
+.not_header_btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-right: 5px !important;
+}
+
+/* 2. Mengganti Ikon Info dengan Ikon Lonceng (Bell) Putih */
+.not_header_btn::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M20.5,15.21V10A8.5,8.5,0,0,0,12,1.5,8.5,8.5,0,0,0,3.5,10v5.21a3.5,3.5,0,0,0-1,2.79,1.5,1.5,0,0,0,1.5,1.5H19a1.5,1.5,0,0,0,1.5-1.5,3.5,3.5,0,0,0-1-2.79ZM12,22a3,3,0,0,0,3-3H9A3,3,0,0,0,12,22Z'/%3e%3c/svg%3e") !important;
+    background-color: transparent !important;
+    background-size: 20px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* 3. Modernisasi Badge (Counter) Notifikasi */
+.not_btn_counter {
+    background-color: #dc3545 !important; /* Warna merah cerah */
+    color: #ffffff !important;
+    font-size: 0.7em !important;
+    font-weight: 600;
+    
+    /* Atur posisi agar menempel di atas ikon lonceng */
+    position: absolute;
+    top: 5px;
+    right: 35px; /* Sesuaikan posisi horizontal */
+    
+    /* Buat bentuk lingkaran yang rapi */
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 5px;
+    border-radius: 9px !important;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* === MEMPOSISIKAN KONTEN HEADER DI TENGAH (VERTikal) === */
+
+/* Mengatur tinggi header dan mengaktifkan flexbox */
+.ui-header .additional_header_left,
+.ui-header .additional_header_middle,
+.ui-header .additional_header_right {
+    display: flex !important;
+    align-items: center !important; /* KUNCI: Membuat semua item di tengah secara vertikal */
+    height: 45px !important; /* Atur tinggi header yang konsisten */
+}
+
+/* Memastikan perataan horizontal tetap benar */
+.ui-header .additional_header_left {
+    justify-content: flex-start !important; /* Rata kiri */
+}
+.ui-header .additional_header_middle {
+    justify-content: center !important; /* Rata tengah */
+    
+}
+.ui-header .additional_header_right {
+    justify-content: flex-end !important; /* Rata kanan */
+}
+
+/* Menghapus properti line-height yang mungkin konflik dengan flexbox */
+.additional_header_middle {
+    line-height: normal !important;
 }

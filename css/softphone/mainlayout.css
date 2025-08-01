@@ -2401,3 +2401,73 @@ body #page_filetransfer .ui-header a.ui-btn {
 .additional_header_middle {
     line-height: normal !important;
 }
+
+/* === PERBAIKAN - LAYOUT VERTIKAL INTERAKTIF === */
+
+/* 1. Jadikan HANYA HALAMAN AKTIF sebagai flex container vertikal */
+/* Penambahan kelas .ui-page-active adalah kuncinya */
+.ui-page.ui-page-active {
+    display: flex !important;
+    flex-direction: column !important; /* Susun item dari atas ke bawah */
+    height: 100vh !important; /* Paksa tinggi halaman menjadi 100% tinggi layar */
+}
+
+/* 2. Area konten di HALAMAN AKTIF akan mengambil semua sisa ruang */
+.ui-page.ui-page-active .ui-content {
+    flex-grow: 1 !important; /* Membuat area konten "tumbuh" mengisi ruang kosong */
+    overflow-y: auto !important; /* Izinkan konten untuk scroll jika lebih panjang */
+    overflow-x: hidden !important;
+}
+
+/* 3. Header dan footer di HALAMAN AKTIF tidak akan menyusut */
+.ui-page.ui-page-active .ui-header,
+.ui-page.ui-page-active .ui-footer {
+    flex-shrink: 0 !important;
+}
+
+/* === PERBAIKAN LAYOUT CALL PAGE: PINDAHKAN TOMBOL HANGUP === */
+
+/* 1. Jadikan area konten sebagai flex container vertikal */
+/* Ini memungkinkan kita untuk mengatur ulang urutan elemen di dalamnya */
+#page_call_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Pastikan mengisi seluruh ruang yang tersedia */
+}
+
+/* 2. Gunakan 'order' untuk mengubah urutan visual elemen */
+#contact_image {
+    order: 1; /* Tampil pertama (paling atas) */
+}
+
+#hangup_layout {
+    order: 2; /* Tampil kedua, di bawah info kontak */
+    /* Trik cerdas: Pindahkan tombol ini dan tombol di bawahnya ke bagian dasar layar */
+    margin-top: auto !important; 
+    margin-bottom: 20px; /* Beri jarak ke bar tombol di bawahnya */
+}
+
+#callfunctions_layout {
+    order: 3; /* Tampil ketiga (paling bawah) */
+    margin-top: 0 !important; /* Hapus margin atas yang tidak perlu lagi */
+    margin-left: -20px !important;/* Jarak dari tepi bawah layar */
+}
+
+/* === PERBAIKAN POSISI TOMBOL TERIMA/TOLAK PANGGILAN === */
+
+/* Atur urutan untuk layout terima/tolak */
+#acceptreject_layout {
+    order: 2; /* Posisikan di bawah info kontak */
+    
+    /* Gunakan trik yang sama untuk mendorongnya ke dasar layar */
+    margin-top: auto !important;
+    margin-bottom: 30px; /* Beri jarak dari tepi bawah */
+}
+
+#page_dialpad_content {
+    overflow: auto !important;
+}
+
+#dialpad_list{
+    display:none !important; 
+}

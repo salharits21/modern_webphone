@@ -2166,3 +2166,24 @@ body #page_filetransfer .ui-header a.ui-btn {
 #settings_page_title {
     color: #ffffff !important;
 }
+
+/* === MODERNISASI BAR TOMBOL PANGGILAN (CALL PAGE) === */
+
+/* Mengubah latar belakang bar menjadi biru solid */
+#callfunctions_layout {
+    background-image: none !important;
+    background-color: #007BFF !important;
+    padding: 5px 0; /* Memberi sedikit ruang vertikal */
+    border-radius: 8px;
+}
+
+/* Menyesuaikan efek hover pada tombol agar lebih modern */
+#callfunctions_layout .ui-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px;
+}
+
+#callfunctions_layout .ui-btn {
+    border-radius: 8px;
+    border-color: #007BFF;
+}

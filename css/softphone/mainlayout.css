@@ -2038,6 +2038,11 @@ body #page_filetransfer .ui-header a.ui-btn {
     filter: brightness(0) invert(1) !important; /* Ikon merah menjadi putih */
 }
 
+#callfunctions_layout {
+    background-color: transparent !important;
+}
+
+
 
 
 

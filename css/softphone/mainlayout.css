@@ -945,6 +945,28 @@ body, #phone_app_main_container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
     border: 1px solid #EAECEE;
     padding: 5px;
+    position: relative !important;
+}
+#phone_number_container .ui-block-a {
+    width: 100% !important;
+}
+
+#phone_number {
+    /* Beri ruang di kanan agar teks tidak tertimpa tombol backspace */
+    box-sizing: border-box; /* Pastikan padding dihitung dengan benar */
+}
+
+#phone_number_container .ui-block-b {
+    position: absolute !important;
+    top: 0;
+    right: 5px; /* Beri sedikit jarak dari tepi kanan */
+    height: 100%;
+    width: 45px !important; /* Atur lebar spesifik untuk area tombol */
+    
+    /* Bonus: Posisikan ikon backspace di tengah secara vertikal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Styling input field */
@@ -960,12 +982,15 @@ body, #phone_app_main_container {
 #phone_number_container ::placeholder {
     color: #AAB0B6; /* Warna placeholder abu-abu */
     font-weight: 400;
+    text-align: center !important;
 }
 
 /* Tombol backspace */
 #btn_backspace {
     background: none !important;
+    padding: 0 !important;
 }
+
 #btn_backspace img {
     /* Ganti dengan ikon modern */
     content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23007BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>');
